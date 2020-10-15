@@ -7,3 +7,8 @@ export const wrapper = styled.div`
   align-items: center;
   border: 1px solid red;
 `
+
+export const row = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;

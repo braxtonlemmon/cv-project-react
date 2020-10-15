@@ -26,10 +26,10 @@ function App() {
     phone: ''
   })
 
-  const [education, setEducation] = useState([
+  const [educationData, setEducationData] = useState([
     {
       school: '',
-      field: '',
+      studyField: '',
       degree: '',
       startDate: '',
       endDate: ''
@@ -40,7 +40,7 @@ function App() {
     {
       company: '',
       position: '',
-      responsibilities: [],
+      responsibilities: '',
       startDate: '',
       endDate: ''
     }
@@ -55,7 +55,10 @@ function App() {
           personalData={personalData} 
           setPersonalData={setPersonalData}
         />
-        <Education />
+        <Education 
+          educationData={educationData}
+          setEducationData={setEducationData}
+        />
         <Experience />
       </Main>
     </Wrapper>
