@@ -61,12 +61,6 @@ function EducationFormComponent({ educationData, handleChange, handleDelete }) {
         </Row>
         <button onClick={(e) => handleDelete(e)}>Delete</button>
       </form>
-      <p>Id: {educationData.id}</p>
-      <p>School: {educationData.school}</p>
-      <p>Field: {educationData.studyField}</p>
-      <p>Degree: {educationData.degree}</p>
-      <p>Start: {educationData.schoolStartDate}</p>
-      <p>End: {educationData.schoolEndDate}</p>
     </Wrapper>
   )
 }

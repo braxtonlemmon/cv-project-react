@@ -33,13 +33,6 @@ function App() {
       degree: '',
       schoolStartDate: '',
       schoolEndDate: ''
-    },
-    {
-      school: '',
-      studyField: '',
-      degree: '',
-      schoolStartDate: '',
-      schoolEndDate: ''
     }
   ]);
   
