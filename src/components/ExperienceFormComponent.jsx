@@ -10,7 +10,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete })
     <Wrapper>
       <form>
         <Row>
-          <label htmlFor="company">Company/Organiztion:</label>
+          <label htmlFor="company">Company:</label>
           <input 
             type="text"
             id="company"

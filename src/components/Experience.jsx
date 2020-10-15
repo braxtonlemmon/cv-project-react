@@ -4,6 +4,9 @@ import { wrapper } from './Shared';
 import ExperienceFormContainer from './ExperienceFormContainer';
 
 const Wrapper = styled(wrapper)`
+  margin: 15px 0;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
 `;
 
 const ExperienceBlock = styled(wrapper)`

@@ -5,10 +5,10 @@ export const wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
 `
 
 export const row = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 13px 0;
 `;

@@ -3,9 +3,14 @@ import { wrapper, row } from './Shared';
 import styled from 'styled-components';
 
 const Wrapper = styled(wrapper)`
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
 `;
 
 const Row = styled(row)`
+  font-family: 'Gayathri', sans-serif;
 `;
 
 function PersonalFormComponent({ personalData, handleChange }) {

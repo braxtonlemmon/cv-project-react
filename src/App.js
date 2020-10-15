@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import styled from 'styled-components';
+import GlobalStyle from './globalStyles';
 import { Reset } from 'styled-reset';
 import Personal from './components/Personal';
 import Education from './components/Education';
@@ -11,11 +12,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  border: 1px solid red;
 `;
 
 const Main = styled.main`
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 function App() {
@@ -50,6 +53,7 @@ function App() {
   return (
     <Wrapper>
       <Reset />
+      <GlobalStyle />
       <Header />
       <Main>
         <Personal 
@@ -64,6 +68,7 @@ function App() {
           experienceData={experienceData}
           setExperienceData={setExperienceData}
         />
+        <button>Submit</button>
       </Main>
     </Wrapper>
   );

@@ -4,6 +4,9 @@ import { wrapper } from './Shared';
 import EducationFormContainer from './EducationFormContainer';
 
 const Wrapper = styled(wrapper)`
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  margin: 15px 0;
+  padding: 20px;
 `;
 
 const EducationBlock = styled(wrapper)`
