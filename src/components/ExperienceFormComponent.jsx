@@ -5,7 +5,7 @@ import { wrapper, row } from './Shared';
 const Wrapper = styled(wrapper)``;
 const Row = styled(row)``;
 
-function ExperienceFormComponent({ experienceData, handleChange }) {
+function ExperienceFormComponent({ experienceData, handleChange, handleDelete }) {
   return (
     <Wrapper>
       <form>
@@ -58,7 +58,13 @@ function ExperienceFormComponent({ experienceData, handleChange }) {
             onChange={(e) => handleChange(e)}
           />
         </Row>
+        <button onClick={(e) => handleDelete(e)}>Delete</button>
       </form>
+      <p>Company: {experienceData.company}</p>
+      <p>Position: {experienceData.position}</p>
+      <p>Responsibilities: {experienceData.responsibilities}</p>
+      <p>Start: {experienceData.workStartDate}</p>
+      <p>End: {experienceData.workEndDate}</p>
     </Wrapper>
   )
 }

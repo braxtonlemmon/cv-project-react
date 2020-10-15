@@ -2,17 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { wrapper } from './Shared';
 import EducationFormContainer from './EducationFormContainer';
-import uniqid from 'uniqid';
 
 const Wrapper = styled(wrapper)`
 `;
 
-const EducationBlock = styled.div`
+const EducationBlock = styled(wrapper)`
   margin: 15px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 `;
 
 function Education({ educationData, setEducationData }) {
@@ -32,7 +27,7 @@ function Education({ educationData, setEducationData }) {
       <h1>Education</h1>
       {educationData.map((education, index) => {
         return (
-          <EducationBlock key={uniqid()}>
+          <EducationBlock key={`education${index}`}>
             <p>Education {index+1}</p>
             <EducationFormContainer
               index={index}
@@ -40,8 +35,7 @@ function Education({ educationData, setEducationData }) {
               setEducationData={setEducationData}
             />
           </EducationBlock>)
-      }
-      )}
+      })}
       <button onClick={handleAdd}>More</button>
     </Wrapper>
   )
