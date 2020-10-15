@@ -31,8 +31,8 @@ function App() {
       school: '',
       studyField: '',
       degree: '',
-      startDate: '',
-      endDate: ''
+      schoolStartDate: '',
+      schoolEndDate: ''
     }
   ]);
 
@@ -41,8 +41,8 @@ function App() {
       company: '',
       position: '',
       responsibilities: '',
-      startDate: '',
-      endDate: ''
+      workStartDate: '',
+      workEndDate: ''
     }
   ])
 

@@ -43,9 +43,9 @@ function EducationFormComponent({ educationData, handleChange }) {
           <label htmlFor="startDate">Start Date:</label>
           <input  
             type="date"
-            id="startDate"
-            name="startDate"
-            value={educationData.startDate}
+            id="schoolStartDate"
+            name="schoolStartDate"
+            value={educationData.schoolStartDate}
             onChange={(e) => handleChange(e)}
           />
         </Row>
@@ -53,9 +53,9 @@ function EducationFormComponent({ educationData, handleChange }) {
           <label htmlFor="endDate">End Date:</label>
           <input  
             type="date"
-            id="endDate"
-            name="endDate"
-            value={educationData.endDate}
+            id="schoolEndDate"
+            name="schoolEndDate"
+            value={educationData.schoolEndDate}
             onChange={(e) => handleChange(e)}
           />
         </Row>
