@@ -3,10 +3,6 @@ import { wrapper, row } from './Shared';
 import styled from 'styled-components';
 
 const Wrapper = styled(wrapper)`
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 12px;
 `;
 
 const Row = styled(row)`
@@ -18,7 +14,7 @@ function PersonalFormComponent({ personalData, handleChange }) {
     <Wrapper>
       <form>
         <Row>
-          <label htmlFor="firstName">First Name:</label>
+          <label htmlFor="firstName">First Name</label>
           <input 
             type="text"
             id="firstName"
@@ -28,7 +24,7 @@ function PersonalFormComponent({ personalData, handleChange }) {
           />
         </Row>
         <Row>
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="lastName">Last Name</label>
           <input 
             type="text"
             id="lastName"
@@ -38,7 +34,7 @@ function PersonalFormComponent({ personalData, handleChange }) {
           />
         </Row>
         <Row>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email</label>
           <input 
             type="email"
             id="email"
@@ -48,7 +44,7 @@ function PersonalFormComponent({ personalData, handleChange }) {
           />
         </Row>
         <Row>
-          <label htmlFor="phone">Phone:</label>
+          <label htmlFor="phone">Phone</label>
           <input 
             type="tel"
             id="phone"

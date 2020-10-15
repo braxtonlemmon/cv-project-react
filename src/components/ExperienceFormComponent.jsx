@@ -1,6 +1,6 @@
 import React from 'react';
+import { wrapper, row, TrashButton } from './Shared';
 import styled from 'styled-components';
-import { wrapper, row } from './Shared';
 
 const Wrapper = styled(wrapper)``;
 const Row = styled(row)``;
@@ -10,7 +10,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete })
     <Wrapper>
       <form>
         <Row>
-          <label htmlFor="company">Company:</label>
+          <label htmlFor="company">Company</label>
           <input 
             type="text"
             id="company"
@@ -39,7 +39,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete })
           />
         </Row>
         <Row>
-          <label htmlFor="workStartDate">Start Date:</label>
+          <label htmlFor="workStartDate">Start Date</label>
           <input 
             type="date"
             id="workStartDate"
@@ -49,7 +49,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete })
           />
         </Row>
         <Row>
-          <label htmlFor="workEndDate">End Date:</label>
+          <label htmlFor="workEndDate">End Date</label>
           <input 
             type="date"
             id="workEndDate"
@@ -58,13 +58,8 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete })
             onChange={(e) => handleChange(e)}
           />
         </Row>
-        <button onClick={(e) => handleDelete(e)}>Delete</button>
+        <TrashButton onClick={(e) => handleDelete(e)} size={25} />
       </form>
-      <p>Company: {experienceData.company}</p>
-      <p>Position: {experienceData.position}</p>
-      <p>Responsibilities: {experienceData.responsibilities}</p>
-      <p>Start: {experienceData.workStartDate}</p>
-      <p>End: {experienceData.workEndDate}</p>
     </Wrapper>
   )
 }

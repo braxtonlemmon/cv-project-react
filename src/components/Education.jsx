@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { wrapper } from './Shared';
+import { wrapper, H1, Block, AddButton } from './Shared';
 import EducationFormContainer from './EducationFormContainer';
 
 const Wrapper = styled(wrapper)`
   box-shadow: 0 0 8px rgba(0,0,0,0.5);
   margin: 15px 0;
   padding: 20px;
+  width: 80%;
+  .block-larger {
+    padding-bottom: 30px;
+  }
 `;
 
-const EducationBlock = styled(wrapper)`
-  margin: 15px 0;
-`;
 
 function Education({ educationData, setEducationData }) {
   const handleAdd = () => {
@@ -27,19 +28,18 @@ function Education({ educationData, setEducationData }) {
   
   return (
     <Wrapper>
-      <h1>Education</h1>
+      <H1>Education</H1>
       {educationData.map((education, index) => {
         return (
-          <EducationBlock key={`education${index}`}>
-            <p>Education {index+1}</p>
+          <Block className="block-larger" key={`education${index}`}>
             <EducationFormContainer
               index={index}
               educationData={educationData}
               setEducationData={setEducationData}
             />
-          </EducationBlock>)
+          </Block>)
       })}
-      <button onClick={handleAdd}>More</button>
+      <AddButton size={30} onClick={handleAdd} />
     </Wrapper>
   )
 }

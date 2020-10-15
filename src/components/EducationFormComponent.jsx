@@ -1,16 +1,22 @@
 import React from 'react';
-import { wrapper, row } from './Shared';
+import { wrapper, row, TrashButton } from './Shared';
 import styled from 'styled-components';
 
-const Wrapper = styled(wrapper)``;
+const Wrapper = styled(wrapper)`
+`;
+
 const Row = styled(row)``;
+
+const Form = styled.form`
+  /* position: relative; */
+`;
 
 function EducationFormComponent({ educationData, handleChange, handleDelete }) {
   return(
     <Wrapper>
-      <form>
+      <Form>
         <Row>
-          <label htmlFor="school">School Name:</label>
+          <label htmlFor="school">School Name</label>
           <input  
             type="text"
             id="school"
@@ -20,7 +26,7 @@ function EducationFormComponent({ educationData, handleChange, handleDelete }) {
           />
         </Row>
         <Row>
-          <label htmlFor="studyField">Field of Study:</label>
+          <label htmlFor="studyField">Field of Study</label>
           <input  
             type="text"
             id="studyField"
@@ -30,7 +36,7 @@ function EducationFormComponent({ educationData, handleChange, handleDelete }) {
           />
         </Row>
         <Row>
-          <label htmlFor="degree">Degree Title:</label>
+          <label htmlFor="degree">Degree Title</label>
           <input  
             type="text"
             id="degree"
@@ -40,7 +46,7 @@ function EducationFormComponent({ educationData, handleChange, handleDelete }) {
           />
         </Row>
         <Row>
-          <label htmlFor="startDate">Start Date:</label>
+          <label htmlFor="startDate">Start Date</label>
           <input  
             type="date"
             id="schoolStartDate"
@@ -50,7 +56,7 @@ function EducationFormComponent({ educationData, handleChange, handleDelete }) {
           />
         </Row>
         <Row>
-          <label htmlFor="endDate">End Date:</label>
+          <label htmlFor="endDate">End Date</label>
           <input  
             type="date"
             id="schoolEndDate"
@@ -59,8 +65,8 @@ function EducationFormComponent({ educationData, handleChange, handleDelete }) {
             onChange={(e) => handleChange(e)}
           />
         </Row>
-        <button onClick={(e) => handleDelete(e)}>Delete</button>
-      </form>
+        <TrashButton onClick={(e) => handleDelete(e)} size={25} />
+      </Form>
     </Wrapper>
   )
 }

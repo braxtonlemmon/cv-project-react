@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { wrapper } from './Shared';
+import { wrapper, H1, Block, AddButton } from './Shared';
 import ExperienceFormContainer from './ExperienceFormContainer';
 
 const Wrapper = styled(wrapper)`
   margin: 15px 0;
   padding: 20px;
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
-`;
-
-const ExperienceBlock = styled(wrapper)`
-  margin: 15px 0;
+  width: 80%;
+  .block-larger {
+    padding-bottom: 30px;
+  }
 `;
 
 function Experience({ experienceData, setExperienceData }) {
@@ -27,20 +27,19 @@ function Experience({ experienceData, setExperienceData }) {
   
   return (
     <Wrapper>
-      <h1>Experience</h1>
+      <H1>Experience</H1>
       {experienceData.map((experience, index) => {
         return (
-          <ExperienceBlock key={`experience${index}`}>
-            <p>Experience {index+1}</p>
+          <Block className="block-larger" key={`experience${index}`}>
             <ExperienceFormContainer
               index={index}
               experienceData={experienceData}
               setExperienceData={setExperienceData}
             />
-          </ExperienceBlock>
+          </Block>
         )
       })}
-      <button onClick={handleAdd}>More</button>
+      <AddButton size={30} onClick={handleAdd} />
     </Wrapper>
   )
 }

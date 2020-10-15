@@ -6,6 +6,7 @@ import { Reset } from 'styled-reset';
 import Personal from './components/Personal';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import { Button } from './components/Shared';
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,6 +20,7 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 `;
 
 function App() {
@@ -68,7 +70,7 @@ function App() {
           experienceData={experienceData}
           setExperienceData={setExperienceData}
         />
-        <button>Submit</button>
+        <Button>Submit</Button>
       </Main>
     </Wrapper>
   );
