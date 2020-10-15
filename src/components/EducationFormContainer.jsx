@@ -1,19 +1,26 @@
 import React from 'react';
 import EducationFormComponent from './EducationFormComponent';
 
-function EducationFormContainer({ educationData, setEducationData }) {
+function EducationFormContainer({ index, educationData, setEducationData }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setEducationData({
-      ...educationData,
-      [name]: value
-    })
+    let dataCopy = [...educationData];
+    dataCopy[index] = {...dataCopy[index], [name]: value}
+    setEducationData(dataCopy);
+  }
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    let dataCopy = [...educationData];
+    dataCopy.splice(index, 1);
+    setEducationData(dataCopy);
   }
   
   return (
     <EducationFormComponent 
-      educationData={educationData}
+      educationData={educationData[index]}
       handleChange={handleChange}
+      handleDelete={handleDelete}
     />
   )
 }

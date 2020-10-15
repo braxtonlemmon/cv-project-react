@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Wrapper = styled(wrapper)``;
 const Row = styled(row)``;
 
-function EducationFormComponent({ educationData, handleChange }) {
+function EducationFormComponent({ educationData, handleChange, handleDelete }) {
   return(
     <Wrapper>
       <form>
@@ -59,7 +59,14 @@ function EducationFormComponent({ educationData, handleChange }) {
             onChange={(e) => handleChange(e)}
           />
         </Row>
+        <button onClick={(e) => handleDelete(e)}>Delete</button>
       </form>
+      <p>Id: {educationData.id}</p>
+      <p>School: {educationData.school}</p>
+      <p>Field: {educationData.studyField}</p>
+      <p>Degree: {educationData.degree}</p>
+      <p>Start: {educationData.schoolStartDate}</p>
+      <p>End: {educationData.schoolEndDate}</p>
     </Wrapper>
   )
 }

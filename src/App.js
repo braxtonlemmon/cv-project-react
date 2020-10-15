@@ -33,8 +33,16 @@ function App() {
       degree: '',
       schoolStartDate: '',
       schoolEndDate: ''
+    },
+    {
+      school: '',
+      studyField: '',
+      degree: '',
+      schoolStartDate: '',
+      schoolEndDate: ''
     }
   ]);
+  
 
   const [experienceData, setExperienceData] = useState([
     {
