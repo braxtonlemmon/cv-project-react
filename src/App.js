@@ -36,7 +36,7 @@ function App() {
     }
   ]);
 
-  const [experience, setExperience] = useState([
+  const [experienceData, setExperienceData] = useState([
     {
       company: '',
       position: '',
@@ -59,7 +59,10 @@ function App() {
           educationData={educationData}
           setEducationData={setEducationData}
         />
-        <Experience />
+        <Experience 
+          experienceData={experienceData}
+          setExperienceData={setExperienceData}
+        />
       </Main>
     </Wrapper>
   );
