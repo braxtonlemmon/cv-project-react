@@ -20,7 +20,7 @@ const Wrapper = styled.header`
 function Header() {
   return (
     <Wrapper>
-      <H1>Build-a-CV</H1>
+      <H1>cool-cat-cv</H1>
     </Wrapper>
   )
 }

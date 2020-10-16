@@ -73,6 +73,8 @@ export const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 2px;
   &:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import GlobalStyle from './themes/globalStyles';
 import Theme from './themes/theme';
 import { Reset } from 'styled-reset';
+import Intro from './components/Intro';
 import Personal from './components/Personal';
 import Education from './components/Education';
 import Experience from './components/Experience';
@@ -60,6 +61,7 @@ function App() {
         <GlobalStyle />
         <Header />
         <Main>
+          <Intro />
           <Personal 
             personalData={personalData} 
             setPersonalData={setPersonalData}
