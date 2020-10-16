@@ -7,6 +7,7 @@ const Wrapper = styled(wrapper)`
   margin: 15px 0;
   font-size: 1.2em;
   width: 80%;
+  max-width: 800px;
   text-align: center;
   color: ${props => props.theme.colors.dark};
   line-height: 1.3em;
@@ -26,7 +27,7 @@ const rotate = keyframes`
 `;
 
 const Cat = styled(FaCat)`
-  margin-bottom: 20px;
+  margin: 20px 0 35px 0;
   animation: ${rotate} 3s ease infinite;
 `;
 

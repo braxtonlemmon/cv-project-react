@@ -1,0 +1,25 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 15px 0;
+  padding-bottom: 15px;
+  width: 100%;
+  border-bottom: 1px solid ${props => props.theme.colors.dark};
+`;
+
+function EducationPretty({ education }) {
+  return (
+    <Wrapper>
+      <p>{education.school}</p>
+      <p>{education.schoolStartDate} - {education.schoolEndDate}</p>
+      <p>{education.studyField} - {education.degree}</p>
+    </Wrapper>
+  )
+}
+
+export default EducationPretty;

@@ -9,6 +9,13 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Gayathri', sans-serif;
   }
+  
+  body, html, #root {
+    height: 100vh;
+  }
+  #root > div {
+    height: 100%;
+  }
 
   input, textarea {
     border-radius: 10px;

@@ -9,6 +9,7 @@ const Wrapper = styled.footer`
   justify-content: center;
   align-items: center;
   width: 100%;
+  text-align: center;
   background: ${props => props.theme.colors.mid};
   padding: 15px 0;
   #copyright {

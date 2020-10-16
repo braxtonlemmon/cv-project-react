@@ -15,6 +15,7 @@ export const Section = styled(wrapper)`
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
   background: ${props => props.theme.colors.dark};
   width: 80%;
+  max-width: 800px;
   border-radius: 12px;
 `;
 
