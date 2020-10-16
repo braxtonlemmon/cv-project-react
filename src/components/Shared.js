@@ -66,8 +66,8 @@ export const TrashButton = styled(FiTrash2)`
 
 export const Button = styled.button`
   border: none;
-  background: ${props => props.theme.colors.mid};
-  color: ${props => props.theme.colors.darker};
+  background: ${props => props.theme.colors.dark};
+  color: ${props => props.theme.colors.light};
   box-shadow: 0 0 8px rgba(0,0,0,0.3);
   padding: 10px;
   cursor: pointer;
