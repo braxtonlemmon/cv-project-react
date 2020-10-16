@@ -1,14 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { wrapper, H2, Block, AddButton } from './Shared';
+import { Section, H2, Block, AddButton } from './Shared';
 import ExperienceFormContainer from './ExperienceFormContainer';
 
-const Wrapper = styled(wrapper)`
-  margin: 15px 0;
-  padding: 20px;
-  background: ${props => props.theme.colors.dark};
-  box-shadow: 0 0 5px rgba(0,0,0,0.5);
-  width: 80%;
+const ExperienceSection = styled(Section)`
   .block-larger {
     padding-bottom: 30px;
   }
@@ -27,7 +22,7 @@ function Experience({ experienceData, setExperienceData }) {
   }
   
   return (
-    <Wrapper>
+    <ExperienceSection>
       <H2>Experience</H2>
       {experienceData.map((experience, index) => {
         return (
@@ -41,7 +36,7 @@ function Experience({ experienceData, setExperienceData }) {
         )
       })}
       <AddButton size={30} onClick={handleAdd} />
-    </Wrapper>
+    </ExperienceSection>
   )
 }
 

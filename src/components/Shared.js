@@ -9,6 +9,15 @@ export const wrapper = styled.div`
   align-items: center;
 `
 
+export const Section = styled(wrapper)`
+  margin: 15px 0;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  background: ${props => props.theme.colors.dark};
+  width: 80%;
+  border-radius: 12px;
+`;
+
 export const row = styled.div`
   display: flex;
   justify-content: space-between;
@@ -18,21 +27,22 @@ export const row = styled.div`
 `;
 
 export const H1 = styled.h1`
-  font-size: 2em;
+  font-size: 2.3em;
 `;
 
 export const H2 = styled.h2`
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: ${props => props.theme.colors.light};
 `;
 
 export const Block = styled(wrapper)`
-  margin: 15px;
-  padding: 10px 30px;
+  margin: 15px 5px;
+  padding: 10px 25px;
   background: rgba(0,0,0,0.1);
   background: ${props => props.theme.colors.light};
   border-radius: 12px;
   position: relative;
+  width: 80%;
 `;
 
 export const AddButton = styled(AiOutlinePlusCircle)`
@@ -57,14 +67,14 @@ export const TrashButton = styled(FiTrash2)`
 export const Button = styled.button`
   border: none;
   background: ${props => props.theme.colors.mid};
-  color: ${props => props.theme.colors.dark};
-  box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+  color: ${props => props.theme.colors.darker};
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1.1em;
   &:hover {
-    box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
   &:focus {
     outline: none;

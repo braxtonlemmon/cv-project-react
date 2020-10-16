@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { wrapper, H2, Block, AddButton } from './Shared';
+import { Section, H2, Block, AddButton } from './Shared';
 import EducationFormContainer from './EducationFormContainer';
 
-const Wrapper = styled(wrapper)`
-  box-shadow: 0 0 8px rgba(0,0,0,0.5);
-  background: ${props => props.theme.colors.dark};
-  margin: 15px 0;
-  padding: 20px;
-  width: 80%;
+
+
+const EducationSection = styled(Section)`
   .block-larger {
     padding-bottom: 30px;
   }
@@ -28,7 +25,7 @@ function Education({ educationData, setEducationData }) {
   }
   
   return (
-    <Wrapper>
+    <EducationSection>
       <H2>Education</H2>
       {educationData.map((education, index) => {
         return (
@@ -41,7 +38,7 @@ function Education({ educationData, setEducationData }) {
           </Block>)
       })}
       <AddButton size={30} onClick={handleAdd} />
-    </Wrapper>
+    </EducationSection>
   )
 }
 

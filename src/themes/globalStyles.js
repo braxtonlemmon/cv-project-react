@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  * {
+    font-size: 18px;
+  }
+  
   body {
     font-family: 'Gayathri', sans-serif;
   }
@@ -20,6 +24,17 @@ const GlobalStyle = createGlobalStyle`
 
   label {
     color: ${props => props.theme.colors.dark};
+    font-size: 18px;
+  }
+
+  textarea {
+    width: 100%;
+    resize: none;
+    height: 8em;
+  }
+
+  input {
+    width: 100%;
   }
 `;
 

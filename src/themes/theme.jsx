@@ -4,8 +4,9 @@ import { ThemeProvider } from 'styled-components';
 const theme = {
   colors: {
     light: '#F6F4F2',
+    mid: '#C6AD8F',
     dark: '#425664',
-    mid: '#C6AD8F'
+    darker: '#2F3B44',
   }
 }
 
