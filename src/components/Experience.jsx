@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { wrapper, H1, Block, AddButton } from './Shared';
+import { wrapper, H2, Block, AddButton } from './Shared';
 import ExperienceFormContainer from './ExperienceFormContainer';
 
 const Wrapper = styled(wrapper)`
   margin: 15px 0;
   padding: 20px;
+  background: ${props => props.theme.colors.dark};
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
   width: 80%;
   .block-larger {
@@ -27,7 +28,7 @@ function Experience({ experienceData, setExperienceData }) {
   
   return (
     <Wrapper>
-      <H1>Experience</H1>
+      <H2>Experience</H2>
       {experienceData.map((experience, index) => {
         return (
           <Block className="block-larger" key={`experience${index}`}>

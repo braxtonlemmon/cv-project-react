@@ -6,7 +6,8 @@ const Wrapper = styled.header`
   display: flex;
   justify-content: center;
   width: 100%;
-  background: lightcoral;
+  background: ${props => props.theme.colors.mid};
+  color: ${props => props.theme.colors.dark};
   padding: 10px 0;
   position: sticky;
   top: 0;

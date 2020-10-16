@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { wrapper, H1, Block, AddButton } from './Shared';
+import { wrapper, H2, Block, AddButton } from './Shared';
 import EducationFormContainer from './EducationFormContainer';
 
 const Wrapper = styled(wrapper)`
   box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  background: ${props => props.theme.colors.dark};
   margin: 15px 0;
   padding: 20px;
   width: 80%;
@@ -28,7 +29,7 @@ function Education({ educationData, setEducationData }) {
   
   return (
     <Wrapper>
-      <H1>Education</H1>
+      <H2>Education</H2>
       {educationData.map((education, index) => {
         return (
           <Block className="block-larger" key={`education${index}`}>
