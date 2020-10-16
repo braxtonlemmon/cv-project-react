@@ -13,7 +13,8 @@ export const row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 13px 0;
+  flex-direction: column;
+  margin: 18px 0;
 `;
 
 export const H1 = styled.h1`
@@ -34,6 +35,9 @@ export const Block = styled(wrapper)`
 
 export const AddButton = styled(AiOutlinePlusCircle)`
   cursor: pointer;
+  &:hover {
+    transform: scale(1.08);
+  }
 `;
 
 export const TrashButton = styled(FiTrash2)`
@@ -41,6 +45,9 @@ export const TrashButton = styled(FiTrash2)`
   position: absolute;
   right: 10px;
   bottom: 10px;
+  &:hover {
+    transform: scale(1.09);
+  }
 `;
 
 export const Button = styled.button`
