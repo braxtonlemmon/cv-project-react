@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import styled from 'styled-components';
-import GlobalStyle from './globalStyles';
+import GlobalStyle from './themes/globalStyles';
+import Theme from './themes/theme';
 import { Reset } from 'styled-reset';
 import Personal from './components/Personal';
 import Education from './components/Education';
@@ -53,26 +54,28 @@ function App() {
   ])
 
   return (
-    <Wrapper>
-      <Reset />
-      <GlobalStyle />
-      <Header />
-      <Main>
-        <Personal 
-          personalData={personalData} 
-          setPersonalData={setPersonalData}
-        />
-        <Education 
-          educationData={educationData}
-          setEducationData={setEducationData}
-        />
-        <Experience 
-          experienceData={experienceData}
-          setExperienceData={setExperienceData}
-        />
-        <Button>Submit</Button>
-      </Main>
-    </Wrapper>
+    <Theme>
+      <Wrapper>
+        <Reset />
+        <GlobalStyle />
+        <Header />
+        <Main>
+          <Personal 
+            personalData={personalData} 
+            setPersonalData={setPersonalData}
+          />
+          <Education 
+            educationData={educationData}
+            setEducationData={setEducationData}
+          />
+          <Experience 
+            experienceData={experienceData}
+            setExperienceData={setExperienceData}
+          />
+          <Button>Submit</Button>
+        </Main>
+      </Wrapper>
+    </Theme>
   );
 }
 
