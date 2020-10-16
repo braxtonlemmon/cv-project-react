@@ -8,6 +8,7 @@ import Intro from './components/Intro';
 import Personal from './components/Personal';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import Footer from './components/Footer';
 import { Button } from './components/Shared';
 
 const Wrapper = styled.div`
@@ -76,6 +77,7 @@ function App() {
           />
           <Button>Submit</Button>
         </Main>
+        <Footer />
       </Wrapper>
     </Theme>
   );
