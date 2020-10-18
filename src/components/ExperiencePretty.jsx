@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
 
 const Wrapper = styled.section`
   display: flex;
@@ -10,13 +11,23 @@ const Wrapper = styled.section`
   width: 100%;
 `;
 
+const Top = styled.div`
+  width: 100%;
+  @media (min-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
 function ExperiencePretty({ experience }) {
   return (
     <Wrapper>
-      <p>{experience.company}</p>
-      <p>{experience.workStartDate} - {experience.workEndDate}</p>
+      <Top>
+        <p>{experience.company}</p>
+        <p>{moment(experience.workStartDate).format("MMM YYYY")} - {moment(experience.workEndDate).format("MMM YYYY")}</p>
+      </Top>
       <p>{experience.position}</p>
-      <p>{experience.responsibilities}</p>
+      <p>Responsibilities: {experience.responsibilities}</p>
     </Wrapper>
   )
 }

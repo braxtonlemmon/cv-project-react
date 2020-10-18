@@ -10,6 +10,8 @@ const Wrapper = styled(wrapper)`
   color: ${props => props.theme.colors.dark};
   h2 {
     color: ${props => props.theme.colors.dark};
+    /* text-decoration: underline; */
+    margin-bottom: 10px;
   }
   width: 95%;
   max-width: 900px;
@@ -18,7 +20,6 @@ const Wrapper = styled(wrapper)`
 function Result({ handleEdit, personalData, educationData, experienceData }) {
   return (
     <Wrapper>
-      <H2>{personalData.firstName} {personalData.lastName}</H2>
       <PersonalPretty personalData={personalData} />
       <h3>Education</h3>
       {educationData.map(education => <EducationPretty education={education} />)}

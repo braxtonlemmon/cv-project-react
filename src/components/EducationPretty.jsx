@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
 
 const Wrapper = styled.section`
   display: flex;
@@ -12,11 +13,21 @@ const Wrapper = styled.section`
   border-bottom: 1px solid ${props => props.theme.colors.dark};
 `;
 
+const Top = styled.div`
+  width: 100%;
+  @media (min-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
 function EducationPretty({ education }) {
   return (
     <Wrapper>
-      <p>{education.school}</p>
-      <p>{education.schoolStartDate} - {education.schoolEndDate}</p>
+      <Top>
+        <p>{education.school}</p>
+        <p>{moment(education.schoolStartDate).format("MMM YYYY")} - {moment(education.schoolEndDate).format("MMM YYYY")}</p>
+      </Top>
       <p>{education.studyField} - {education.degree}</p>
     </Wrapper>
   )

@@ -81,7 +81,7 @@ function App() {
       company: 'Tapif',
       position: 'Language Assistant',
       responsibilities: 'Teach English',
-      workStartDate: '10-01-2014',
+      workStartDate: '10/01/2014',
       workEndDate: '05/01/2015'
     }
   ])
