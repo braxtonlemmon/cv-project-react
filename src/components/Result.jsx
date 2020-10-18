@@ -11,6 +11,8 @@ const Wrapper = styled(wrapper)`
   h2 {
     color: ${props => props.theme.colors.dark};
   }
+  width: 95%;
+  max-width: 900px;
 `;
 
 function Result({ handleEdit, personalData, educationData, experienceData }) {
