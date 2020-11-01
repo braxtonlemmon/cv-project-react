@@ -32,7 +32,7 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-  font-size: 1.6em;
+  font-size: 1.7em;
   color: ${props => props.theme.colors.light};
 `;
 
