@@ -31,60 +31,60 @@ const Main = styled.main`
 function App() {
   const [isEditing, setEditing] = useState(false);
   
-  // const [personalData, setPersonalData] = useState({
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   phone: ''
-  // })
-
-  // const [educationData, setEducationData] = useState([
-  //   {
-  //     school: '',
-  //     studyField: '',
-  //     degree: '',
-  //     schoolStartDate: '',
-  //     schoolEndDate: ''
-  //   }
-  // ]);
-  
-
-  // const [experienceData, setExperienceData] = useState([
-  //   {
-  //     company: '',
-  //     position: '',
-  //     responsibilities: '',
-  //     workStartDate: '',
-  //     workEndDate: ''
-  //   }
-  // ])
   const [personalData, setPersonalData] = useState({
-    firstName: 'Braxton',
-    lastName: 'Lemmon',
-    email: 'braxtonlemmon@gmail.com',
-    phone: '801-960-0831'
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: ''
   })
 
   const [educationData, setEducationData] = useState([
     {
-      school: 'Brigham Young University',
-      studyField: 'Recreational Therapy',
-      degree: 'Bachelor',
-      schoolStartDate: '08/01/2007',
-      schoolEndDate: '08/01/2014'
+      school: '',
+      studyField: '',
+      degree: '',
+      schoolStartDate: '',
+      schoolEndDate: ''
     }
   ]);
   
 
   const [experienceData, setExperienceData] = useState([
     {
-      company: 'Tapif',
-      position: 'Language Assistant',
-      responsibilities: 'Teach English',
-      workStartDate: '10/01/2014',
-      workEndDate: '05/01/2015'
+      company: '',
+      position: '',
+      responsibilities: '',
+      workStartDate: '',
+      workEndDate: ''
     }
   ])
+  // const [personalData, setPersonalData] = useState({
+  //   firstName: 'Braxton',
+  //   lastName: 'Lemmon',
+  //   email: 'braxtonlemmon@gmail.com',
+  //   phone: '801-960-0831'
+  // })
+
+  // const [educationData, setEducationData] = useState([
+  //   {
+  //     school: 'Brigham Young University',
+  //     studyField: 'Recreational Therapy',
+  //     degree: 'Bachelor',
+  //     schoolStartDate: '08/01/2007',
+  //     schoolEndDate: '08/01/2014'
+  //   }
+  // ]);
+  
+
+  // const [experienceData, setExperienceData] = useState([
+  //   {
+  //     company: 'Tapif',
+  //     position: 'Language Assistant',
+  //     responsibilities: 'Teach English',
+  //     workStartDate: '10/01/2014',
+  //     workEndDate: '05/01/2015'
+  //   }
+  // ])
   const handleSubmit = () => {
     setEditing(false);
   }
