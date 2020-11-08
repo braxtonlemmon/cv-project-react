@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import styled from 'styled-components';
 import GlobalStyle from './themes/globalStyles';
@@ -11,6 +11,8 @@ import Experience from './components/Experience';
 import Result from './components/Result';
 import Footer from './components/Footer';
 import { Button } from './components/Shared';
+import { FaBorderNone } from 'react-icons/fa';
+import MainFormContainer from './components/MainFormContainer';
 
 const Wrapper = styled.div`
   display: flex;
@@ -28,9 +30,13 @@ const Main = styled.main`
   margin-bottom: 30px;
 `;
 
+const SubmitButton = styled(Button)`
+  cursor: pointer;
+`;
+
 function App() {
-  const [isEditing, setEditing] = useState(false);
-  
+  const [isEditing, setEditing] = useState(true);
+  const [canSubmit, setCanSubmit] = useState(false);
   const [personalData, setPersonalData] = useState({
     firstName: '',
     lastName: '',
@@ -58,6 +64,7 @@ function App() {
       workEndDate: ''
     }
   ])
+
   // const [personalData, setPersonalData] = useState({
   //   firstName: 'Braxton',
   //   lastName: 'Lemmon',
@@ -103,9 +110,19 @@ function App() {
           isEditing &&
           <Main>
             <Intro />
-            <Personal 
+            <MainFormContainer 
+              personalData={personalData}
+              setPersonalData={setPersonalData}
+              educationData={educationData}
+              setEducationData={setEducationData}
+              experienceData={experienceData}
+              setExperienceData={setExperienceData}
+            />
+            {/* <Personal 
               personalData={personalData} 
               setPersonalData={setPersonalData}
+              setCanSubmit={setCanSubmit}
+              canSubmit={canSubmit}
             />
             <Education 
               educationData={educationData}
@@ -114,8 +131,8 @@ function App() {
             <Experience 
               experienceData={experienceData}
               setExperienceData={setExperienceData}
-            />
-            <Button onClick={handleSubmit}>Submit</Button>
+            /> */}
+            <SubmitButton canSubmit={canSubmit} onClick={handleSubmit}>Submit</SubmitButton>
           </Main>
         }
         {

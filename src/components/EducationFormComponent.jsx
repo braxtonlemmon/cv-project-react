@@ -14,7 +14,7 @@ const Form = styled.form`
 function EducationFormComponent({ educationData, handleChange, handleDelete }) {
   return(
     <Wrapper>
-      <Form>
+      {/* <Form> */}
         <Row>
           <label htmlFor="school">School Name</label>
           <input  
@@ -66,7 +66,7 @@ function EducationFormComponent({ educationData, handleChange, handleDelete }) {
           />
         </Row>
         <TrashButton onClick={(e) => handleDelete(e)} size={25} />
-      </Form>
+      {/* </Form> */}
     </Wrapper>
   )
 }

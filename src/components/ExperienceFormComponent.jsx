@@ -8,7 +8,7 @@ const Row = styled(row)``;
 function ExperienceFormComponent({ experienceData, handleChange, handleDelete }) {
   return (
     <Wrapper>
-      <form>
+      {/* <form> */}
         <Row>
           <label htmlFor="company">Company</label>
           <input 
@@ -59,7 +59,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete })
           />
         </Row>
         <TrashButton onClick={(e) => handleDelete(e)} size={25} />
-      </form>
+      {/* </form> */}
     </Wrapper>
   )
 }
