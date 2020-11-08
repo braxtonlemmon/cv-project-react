@@ -18,6 +18,7 @@ function MainFormContainer({
   const onSubmit = (data, e) => {
     e.preventDefault();
     setEditing(false)
+    console.log(data);
   }
 
   return (

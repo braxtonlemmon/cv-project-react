@@ -11,18 +11,22 @@ const Form = styled.form`
   /* position: relative; */
 `;
 
-function EducationFormComponent({ educationData, handleChange, handleDelete }) {
+function EducationFormComponent({ educationData, handleChange, handleDelete, register, index }) {
   return(
     <Wrapper>
       {/* <Form> */}
         <Row>
-          <label htmlFor="school">School Name</label>
+          <label htmlFor={`school-${index}`}>School Name</label>
           <input  
             type="text"
-            id="school"
-            name="school"
-            value={educationData.school}
-            onChange={(e) => handleChange(e)}
+            id={`school-${index}`}
+            name={`school-${index}`}
+            // value={educationData.school}
+            // onChange={(e) => handleChange(e)}
+            ref={register({
+              required: 'School is required.',
+              minLength: 1
+            })}
           />
         </Row>
         <Row>

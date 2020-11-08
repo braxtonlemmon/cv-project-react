@@ -1,7 +1,7 @@
 import React from 'react';
 import EducationFormComponent from './EducationFormComponent';
 
-function EducationFormContainer({ index, educationData, setEducationData }) {
+function EducationFormContainer({ index, educationData, setEducationData, register }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     let dataCopy = [...educationData];
@@ -21,6 +21,8 @@ function EducationFormContainer({ index, educationData, setEducationData }) {
       educationData={educationData[index]}
       handleChange={handleChange}
       handleDelete={handleDelete}
+      register={register}
+      index={index}
     />
   )
 }

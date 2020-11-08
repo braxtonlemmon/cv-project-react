@@ -12,7 +12,7 @@ const EducationSection = styled(Section)`
 `;
 
 
-function Education({ educationData, setEducationData }) {
+function Education({ educationData, setEducationData, register }) {
   const handleAdd = () => {
     const blankEducationData = {
       school: '',
@@ -34,6 +34,7 @@ function Education({ educationData, setEducationData }) {
               index={index}
               educationData={educationData}
               setEducationData={setEducationData}
+              register={register}
             />
           </Block>)
       })}

@@ -15,19 +15,32 @@ function PersonalFormComponent({ personalData, handleChange, register, errors })
     <Wrapper>
         <Row>
           <label htmlFor="firstName">First Name</label>
-          <input 
+          {/* <input 
             type="text"
             id="firstName"
             name="firstName"
             value={personalData.firstName}
             onChange={(e) => handleChange(e)}
             ref={register({
-              required: 'name is required',
+              required: 'First name is required.',
+              minLength: 1
+            })}
+          /> */}
+          <input 
+            type="text"
+            id="firstName"
+            name="firstName"
+            defaultValue={"Brax"}
+            // value={personalData.firstName}
+            // onChange={(e) => handleChange(e)}
+            ref={register({
+              required: 'First name is required.',
               minLength: 1
             })}
           />
+
         </Row>
-        {errors.firstName && <Error>↑ First name is required</Error>}
+        {errors.firstName && <Error>↑ First name is required!</Error>}
         <Row>
           <label htmlFor="lastName">Last Name</label>
           <input 
@@ -37,11 +50,12 @@ function PersonalFormComponent({ personalData, handleChange, register, errors })
             value={personalData.lastName}
             onChange={(e) => handleChange(e)}
             ref={register({
-              required: true,
+              required: 'Last name is required.',
               minLength: 1
             })}
           />
         </Row>
+        {errors.lastName && <Error>↑ Last name is required!</Error>}
         <Row>
           <label htmlFor="email">Email</label>
           <input 
@@ -51,11 +65,12 @@ function PersonalFormComponent({ personalData, handleChange, register, errors })
             value={personalData.email}
             onChange={(e) => handleChange(e)}
             ref={register({
-              required: true,
+              required: 'Email is required.',
               minLength: 1
             })}
           />
         </Row>
+        {errors.email && <Error>↑ Email is required!</Error>}
         <Row>
           <label htmlFor="phone">Phone</label>
           <input 
@@ -65,11 +80,12 @@ function PersonalFormComponent({ personalData, handleChange, register, errors })
             value={personalData.phone}
             onChange={(e) => handleChange(e)}
             ref={register({
-              required: true,
+              required: 'Phone number is required.',
               minLength: 1
             })}
           />
         </Row>
+        {errors.phone && <Error>↑ Phone number is required!</Error>}
     </Wrapper>
   )
 }
