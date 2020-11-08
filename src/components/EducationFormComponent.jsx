@@ -21,6 +21,7 @@ function EducationFormComponent({ educationData, handleChange, handleDelete, reg
             type="text"
             id={`school-${index}`}
             name={`school-${index}`}
+            defaultValue={educationData.school}
             // value={educationData.school}
             // onChange={(e) => handleChange(e)}
             ref={register({
@@ -30,43 +31,61 @@ function EducationFormComponent({ educationData, handleChange, handleDelete, reg
           />
         </Row>
         <Row>
-          <label htmlFor="studyField">Field of Study</label>
+          <label htmlFor={`studyField-${index}`}>Field of Study</label>
           <input  
             type="text"
-            id="studyField"
-            name="studyField"
-            value={educationData.studyField}
-            onChange={(e) => handleChange(e)}
+            id={`studyField-${index}`}
+            name={`studyField-${index}`}
+            defaultValue={educationData.studyField}
+            ref={register({
+              required: 'Study field is required.',
+              minLength: 1
+            })}
+            // value={educationData.studyField}
+            // onChange={(e) => handleChange(e)}
           />
         </Row>
         <Row>
-          <label htmlFor="degree">Degree Title</label>
+          <label htmlFor={`degree-${index}`}>Degree Title</label>
           <input  
             type="text"
-            id="degree"
-            name="degree"
-            value={educationData.degree}
-            onChange={(e) => handleChange(e)}
+            id={`degree-${index}`}
+            name={`degree-${index}`}
+            defaultValue={educationData.degree}
+            ref={register({
+              required: 'Degree field is required',
+              minLength: 1
+            })}
+            // value={educationData.degree}
+            // onChange={(e) => handleChange(e)}
           />
         </Row>
         <Row>
-          <label htmlFor="startDate">Start Date</label>
+          <label htmlFor={`schoolStartDate-${index}`}>Start Date</label>
           <input  
             type="date"
-            id="schoolStartDate"
-            name="schoolStartDate"
-            value={educationData.schoolStartDate}
-            onChange={(e) => handleChange(e)}
+            id={`schoolStartDate-${index}`}
+            name={`schoolStartDate-${index}`}
+            defaultValue={educationData.schoolStartDate}
+            ref={register({
+              required: 'Start date is required'
+            })}
+            // value={educationData.schoolStartDate}
+            // onChange={(e) => handleChange(e)}
           />
         </Row>
         <Row>
-          <label htmlFor="endDate">End Date</label>
+          <label htmlFor={`schoolEndDate-${index}`}>End Date</label>
           <input  
             type="date"
-            id="schoolEndDate"
-            name="schoolEndDate"
-            value={educationData.schoolEndDate}
-            onChange={(e) => handleChange(e)}
+            id={`schoolEndDate-${index}`}
+            name={`schoolEndDate-${index}`}
+            defaultValue={educationData.schoolEndDate}
+            ref={register({
+              required: 'End date is required'
+            })}
+            // value={educationData.schoolEndDate}
+            // onChange={(e) => handleChange(e)}
           />
         </Row>
         <TrashButton onClick={(e) => handleDelete(e)} size={25} />

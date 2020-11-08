@@ -1,7 +1,7 @@
 import React from 'react';
 import ExperienceFormComponent from './ExperienceFormComponent';
 
-function ExperienceFormContainer({ index, experienceData, setExperienceData }) {
+function ExperienceFormContainer({ index, experienceData, setExperienceData, register }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     let dataCopy = [...experienceData];
@@ -21,6 +21,8 @@ function ExperienceFormContainer({ index, experienceData, setExperienceData }) {
       experienceData={experienceData[index]}
       handleChange={handleChange}
       handleDelete={handleDelete}
+      index={index}
+      register={register}
     />
   )
 }

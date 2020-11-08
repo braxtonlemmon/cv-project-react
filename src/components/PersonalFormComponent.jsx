@@ -30,7 +30,7 @@ function PersonalFormComponent({ personalData, handleChange, register, errors })
             type="text"
             id="firstName"
             name="firstName"
-            defaultValue={"Brax"}
+            defaultValue={personalData.firstName}
             // value={personalData.firstName}
             // onChange={(e) => handleChange(e)}
             ref={register({
@@ -47,8 +47,9 @@ function PersonalFormComponent({ personalData, handleChange, register, errors })
             type="text"
             id="lastName"
             name="lastName"
-            value={personalData.lastName}
-            onChange={(e) => handleChange(e)}
+            defaultValue={personalData.lastName}
+            // value={personalData.lastName}
+            // onChange={(e) => handleChange(e)}
             ref={register({
               required: 'Last name is required.',
               minLength: 1
@@ -62,8 +63,9 @@ function PersonalFormComponent({ personalData, handleChange, register, errors })
             type="email"
             id="email"
             name="email"
-            value={personalData.email}
-            onChange={(e) => handleChange(e)}
+            defaultValue={personalData.email}
+            // value={personalData.email}
+            // onChange={(e) => handleChange(e)}
             ref={register({
               required: 'Email is required.',
               minLength: 1
@@ -77,8 +79,9 @@ function PersonalFormComponent({ personalData, handleChange, register, errors })
             type="tel"
             id="phone"
             name="phone"
-            value={personalData.phone}
-            onChange={(e) => handleChange(e)}
+            defaultValue={personalData.phone}
+            // value={personalData.phone}
+            // onChange={(e) => handleChange(e)}
             ref={register({
               required: 'Phone number is required.',
               minLength: 1

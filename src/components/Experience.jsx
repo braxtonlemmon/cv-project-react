@@ -9,7 +9,7 @@ const ExperienceSection = styled(Section)`
   }
 `;
 
-function Experience({ experienceData, setExperienceData }) {
+function Experience({ experienceData, setExperienceData, register }) {
   const handleAdd = () => {
     const blankExperienceData = {
       company: '',
@@ -31,6 +31,7 @@ function Experience({ experienceData, setExperienceData }) {
               index={index}
               experienceData={experienceData}
               setExperienceData={setExperienceData}
+              register={register}
             />
           </Block>
         )

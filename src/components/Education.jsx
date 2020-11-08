@@ -32,6 +32,7 @@ function Education({ educationData, setEducationData, register }) {
           <Block className="block-larger" key={`education${index}`}>
             <EducationFormContainer
               index={index}
+              education={education}
               educationData={educationData}
               setEducationData={setEducationData}
               register={register}
