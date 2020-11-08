@@ -14,10 +14,9 @@ function MainFormContainer({
   setEditing
 }) {
   
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log('hey');
     setEditing(false)
   }
 
@@ -32,6 +31,7 @@ function MainFormContainer({
       handleSubmit={handleSubmit}
       onSubmit={onSubmit}
       register={register}
+      errors={errors}
     />
   )
 }

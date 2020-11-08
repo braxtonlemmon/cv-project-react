@@ -83,3 +83,11 @@ export const Button = styled.button`
     outline: none;
   }
 `;
+
+export const Error = styled.p`
+  color: red;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  margin-top: -8px;
+`;

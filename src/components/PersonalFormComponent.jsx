@@ -1,5 +1,5 @@
 import React from 'react';
-import { wrapper, row } from './Shared';
+import { wrapper, row, Error } from './Shared';
 import styled from 'styled-components';
 
 const Wrapper = styled(wrapper)`
@@ -9,11 +9,10 @@ const Row = styled(row)`
   font-family: 'Gayathri', sans-serif;
 `;
 
-function PersonalFormComponent({ personalData, handleChange, register }) {
+function PersonalFormComponent({ personalData, handleChange, register, errors }) {
  
   return (
     <Wrapper>
-      {/* <form> */}
         <Row>
           <label htmlFor="firstName">First Name</label>
           <input 
@@ -23,11 +22,12 @@ function PersonalFormComponent({ personalData, handleChange, register }) {
             value={personalData.firstName}
             onChange={(e) => handleChange(e)}
             ref={register({
-              required: true,
+              required: 'name is required',
               minLength: 1
             })}
           />
         </Row>
+        {errors.firstName && <Error>↑ First name is required</Error>}
         <Row>
           <label htmlFor="lastName">Last Name</label>
           <input 
@@ -70,7 +70,6 @@ function PersonalFormComponent({ personalData, handleChange, register }) {
             })}
           />
         </Row>
-      {/* </form> */}
     </Wrapper>
   )
 }

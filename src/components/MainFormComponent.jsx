@@ -24,7 +24,8 @@ function MainFormComponent({
   setExperienceData,
   onSubmit,
   handleSubmit,
-  register
+  register,
+  errors
 }) {
 
   return (
@@ -34,6 +35,7 @@ function MainFormComponent({
           personalData={personalData}
           setPersonalData={setPersonalData}
           register={register}
+          errors={errors}
         />
         <Education
           educationData={educationData}
