@@ -1,12 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { wrapper } from './Shared';
+import { wrapper, Button } from './Shared';
 import Personal from './Personal';
 import Education from './Education';
 import Experience from './Experience';
 
 const Wrapper = styled(wrapper)`
+`;
 
+const Form = styled.form`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 function MainFormComponent({
@@ -17,26 +23,30 @@ function MainFormComponent({
   experienceData,
   setExperienceData,
   onSubmit,
-  handleSubmit
+  handleSubmit,
+  register
 }) {
 
   return (
     <Wrapper>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Personal 
           personalData={personalData}
           setPersonalData={setPersonalData}
+          register={register}
         />
         <Education
           educationData={educationData}
           setEducationData={setEducationData}
+          register={register}
         />
         <Experience
           experienceData={experienceData}
           setExperienceData={setExperienceData}
+          register={register}
         />
-        <button type="submit">Submit</button>
-      </form>
+        <Button type="submit">Submit</Button>
+      </Form>
     </Wrapper>  
   )
 }

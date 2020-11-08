@@ -9,13 +9,16 @@ function MainFormContainer({
   educationData,
   setEducationData,
   experienceData,
-  setExperienceData
+  setExperienceData,
+  isEditing,
+  setEditing
 }) {
   
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, e) => {
     e.preventDefault();
     console.log('hey');
+    setEditing(false)
   }
 
   return (
@@ -28,6 +31,7 @@ function MainFormContainer({
       setExperienceData={setExperienceData}
       handleSubmit={handleSubmit}
       onSubmit={onSubmit}
+      register={register}
     />
   )
 }

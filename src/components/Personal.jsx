@@ -2,7 +2,7 @@ import React from 'react';
 import { Section, H2, Block } from './Shared';
 import PersonalFormContainer from './PersonalFormContainer';
 
-function Personal({ personalData, setPersonalData }) {
+function Personal({ personalData, setPersonalData, register }) {
   return (
     <Section>
       <H2>Personal Info</H2>
@@ -10,6 +10,7 @@ function Personal({ personalData, setPersonalData }) {
         <PersonalFormContainer 
           personalData={personalData}
           setPersonalData={setPersonalData}
+          register={register}
           />
       </Block>
     </Section>

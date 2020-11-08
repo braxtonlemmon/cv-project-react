@@ -117,6 +117,8 @@ function App() {
               setEducationData={setEducationData}
               experienceData={experienceData}
               setExperienceData={setExperienceData}
+              isEditing={isEditing}
+              setEditing={setEditing}
             />
             {/* <Personal 
               personalData={personalData} 
@@ -132,7 +134,7 @@ function App() {
               experienceData={experienceData}
               setExperienceData={setExperienceData}
             /> */}
-            <SubmitButton canSubmit={canSubmit} onClick={handleSubmit}>Submit</SubmitButton>
+            {/* <SubmitButton canSubmit={canSubmit} onClick={handleSubmit}>Submit</SubmitButton> */}
           </Main>
         }
         {

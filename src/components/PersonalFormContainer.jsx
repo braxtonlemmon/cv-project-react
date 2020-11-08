@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PersonalFormComponent from './PersonalFormComponent';
 
-function PersonalFormContainer({ personalData, setPersonalData }) {
+function PersonalFormContainer({ personalData, setPersonalData, register }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     // validatePersonal();
@@ -30,6 +30,7 @@ function PersonalFormContainer({ personalData, setPersonalData }) {
     <PersonalFormComponent
       personalData={personalData}
       handleChange={handleChange}
+      register={register}
     />
   )
 }

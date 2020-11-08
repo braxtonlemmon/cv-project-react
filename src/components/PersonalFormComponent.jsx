@@ -1,7 +1,6 @@
 import React from 'react';
 import { wrapper, row } from './Shared';
 import styled from 'styled-components';
-import { useForm } from 'react-hook-form';
 
 const Wrapper = styled(wrapper)`
 `;
@@ -10,12 +9,8 @@ const Row = styled(row)`
   font-family: 'Gayathri', sans-serif;
 `;
 
-function PersonalFormComponent({ personalData, handleChange }) {
-  const { register, handleSubmit, errors } = useForm({
-    mode: "onBlur",
-
-  });
-  
+function PersonalFormComponent({ personalData, handleChange, register }) {
+ 
   return (
     <Wrapper>
       {/* <form> */}
@@ -41,6 +36,10 @@ function PersonalFormComponent({ personalData, handleChange }) {
             name="lastName"
             value={personalData.lastName}
             onChange={(e) => handleChange(e)}
+            ref={register({
+              required: true,
+              minLength: 1
+            })}
           />
         </Row>
         <Row>
@@ -51,6 +50,10 @@ function PersonalFormComponent({ personalData, handleChange }) {
             name="email"
             value={personalData.email}
             onChange={(e) => handleChange(e)}
+            ref={register({
+              required: true,
+              minLength: 1
+            })}
           />
         </Row>
         <Row>
@@ -61,6 +64,10 @@ function PersonalFormComponent({ personalData, handleChange }) {
             name="phone"
             value={personalData.phone}
             onChange={(e) => handleChange(e)}
+            ref={register({
+              required: true,
+              minLength: 1
+            })}
           />
         </Row>
       {/* </form> */}
