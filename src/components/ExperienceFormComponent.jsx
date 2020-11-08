@@ -15,6 +15,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete, i
             type="text"
             id={`company-${index}`}
             name={`company-${index}`}
+            defaultValue={experienceData.company}
             ref={register({
               required: 'Company is required',
               minLength: 1
@@ -29,6 +30,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete, i
             type="text"
             id={`position-${index}`}
             name={`position-${index}`}
+            defaultValue={experienceData.position}
             ref={register({
               required: 'Position is required',
               minLength: 1
@@ -42,6 +44,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete, i
           <textarea
             id={`responsibilities-${index}`}
             name={`responsibilities-${index}`}
+            defaultValue={experienceData.responsibilities}
             ref={register({
               required: 'Responsibilities are required',
               minLength: 1
@@ -56,6 +59,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete, i
             type="date"
             id={`workStartDate-${index}`}
             name={`workStartDate-${index}`}
+            defaultValue={experienceData.workStartDate}
             ref={register({
               required: 'Start date is required',
             })}
@@ -69,6 +73,7 @@ function ExperienceFormComponent({ experienceData, handleChange, handleDelete, i
             type="date"
             id={`workEndDate-${index}`}
             name={`workEndDate-${index}`}
+            defaultValue={experienceData.workEndDate}
             ref={register({
               required: 'End date is required',
             })}
