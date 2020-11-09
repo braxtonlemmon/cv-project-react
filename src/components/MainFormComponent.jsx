@@ -28,8 +28,6 @@ function MainFormComponent({
     <Wrapper>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Personal 
-          personalData={personalData}
-          setPersonalData={setPersonalData}
           register={register}
           errors={errors}
         />

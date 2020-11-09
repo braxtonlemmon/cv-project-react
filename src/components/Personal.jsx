@@ -1,18 +1,16 @@
 import React from 'react';
 import { Section, H2, Block } from './Shared';
-import PersonalFormContainer from './PersonalFormContainer';
+import PersonalFormComponent from './PersonalFormComponent';
 
-function Personal({ personalData, setPersonalData, register, errors }) {
+function Personal({ register, errors }) {
   return (
     <Section>
       <H2>Personal Info</H2>
       <Block>
-        <PersonalFormContainer 
-          personalData={personalData}
-          setPersonalData={setPersonalData}
+        <PersonalFormComponent
           register={register}
           errors={errors}
-          />
+        />
       </Block>
     </Section>
   )
