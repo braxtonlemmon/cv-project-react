@@ -2,11 +2,15 @@ import React from 'react';
 import { wrapper, row, TrashButton } from './Shared';
 import styled from 'styled-components';
 
+const Wrapper = styled(wrapper)`
+
+`;
+
 const Row = styled(row)``;
 
-function EducationFormComponent({ register, index, remove, schoolData }) {
+function EducationFormComponent({ register, index, remove, schoolData, errors }) {  
   return(
-    <wrapper>
+    <Wrapper>
         <Row>
           <label htmlFor={`education[${index}].school`}>School Name</label>
           <input  
@@ -58,7 +62,7 @@ function EducationFormComponent({ register, index, remove, schoolData }) {
           />
         </Row>
         <TrashButton onClick={(e) => remove(index)} size={25} />
-    </wrapper>
+    </Wrapper>
   )
 }
 

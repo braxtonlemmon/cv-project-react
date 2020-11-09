@@ -10,7 +10,7 @@ const EducationSection = styled(Section)`
   }
 `;
 
-function Education({ register, control }) {
+function Education({ register, control, errors }) {
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'education'
@@ -28,6 +28,7 @@ function Education({ register, control }) {
               register={register}
               schoolData={schoolData}
               remove={remove}
+              errors={errors}
             />
           </Block>
         )
