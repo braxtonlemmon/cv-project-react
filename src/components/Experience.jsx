@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Section, H2, Block, AddButton } from './Shared';
-import ExperienceFormContainer from './ExperienceFormContainer';
+import ExperienceFormComponent from './ExperienceFormComponent';
+import { useFieldArray } from 'react-hook-form';
 
 const ExperienceSection = styled(Section)`
   .block-larger {
@@ -9,34 +10,30 @@ const ExperienceSection = styled(Section)`
   }
 `;
 
-function Experience({ experienceData, setExperienceData, register }) {
-  const handleAdd = () => {
-    const blankExperienceData = {
-      company: '',
-      position: '',
-      responsibilities: '',
-      workStartDate: '',
-      workEndDate: ''
-    }
-    setExperienceData(data => [...data, blankExperienceData]);
-  }
-  
+function Experience({ register, control, errors }) {
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'experience'
+  });
+
   return (
     <ExperienceSection>
       <H2>Experience</H2>
-      {experienceData.map((experience, index) => {
-        return (
-          <Block className="block-larger" key={`experience${index}`}>
-            <ExperienceFormContainer
+      {fields.map(({ id, company, position, responsibilities, workStartDate, workEndDate }, index) => { 
+        const workData = { company, position, responsibilities, workStartDate, workEndDate }
+        return(
+          <Block className="block-larger" key={id}>
+            <ExperienceFormComponent
               index={index}
-              experienceData={experienceData}
-              setExperienceData={setExperienceData}
               register={register}
+              workData={workData}
+              remove={remove}
+              errors={errors}
             />
           </Block>
         )
       })}
-      <AddButton size={30} onClick={handleAdd} />
+      <AddButton type="button" size={30} onClick={() => append({})} />
     </ExperienceSection>
   )
 }

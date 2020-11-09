@@ -18,10 +18,6 @@ const Form = styled.form`
 function MainFormComponent({
   personalData,
   setPersonalData,
-  educationData,
-  setEducationData,
-  experienceData,
-  setExperienceData,
   onSubmit,
   handleSubmit,
   register,
@@ -43,9 +39,9 @@ function MainFormComponent({
           errors={errors}
         />
         <Experience
-          experienceData={experienceData}
-          setExperienceData={setExperienceData}
           register={register}
+          control={control}
+          errors={errors}
         />
         <Button type="submit">Submit</Button>
       </Form>

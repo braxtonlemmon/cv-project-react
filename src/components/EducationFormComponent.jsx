@@ -61,7 +61,7 @@ function EducationFormComponent({ register, index, remove, schoolData, errors })
             ref={register({ required: 'End date is required' })}
           />
         </Row>
-        <TrashButton onClick={(e) => remove(index)} size={25} />
+        <TrashButton onClick={() => remove(index)} size={25} />
     </Wrapper>
   )
 }
