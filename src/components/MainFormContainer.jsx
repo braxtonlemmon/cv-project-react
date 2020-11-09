@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useFieldArray } from 'react-hook-form';
 import MainFormComponent from './MainFormComponent';
 
 // I will make this one single form, instead of three separate forms as I have it now
@@ -14,7 +14,20 @@ function MainFormContainer({
   setEditing
 }) {
   
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors, control } = useForm();
+  
+  // const {
+  //   fields: educationFields,
+  //   append: educationAppend,
+  //   remove: educationRemove
+  // } = useFieldArray({ control, name: "education" });
+  
+  // const {
+  //   fields: experienceFields,
+  //   append: experienceAppend,
+  //   remove: experienceRemove
+  // } = useFieldArray({ control, name: "experience" })
+
   const onSubmit = (data, e) => {
     e.preventDefault();
     setEditing(false)
@@ -33,6 +46,7 @@ function MainFormContainer({
       onSubmit={onSubmit}
       register={register}
       errors={errors}
+      control={control}
     />
   )
 }

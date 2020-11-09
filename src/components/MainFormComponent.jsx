@@ -25,9 +25,9 @@ function MainFormComponent({
   onSubmit,
   handleSubmit,
   register,
-  errors
+  errors,
+  control
 }) {
-
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -38,9 +38,9 @@ function MainFormComponent({
           errors={errors}
         />
         <Education
-          educationData={educationData}
-          setEducationData={setEducationData}
           register={register}
+          control={control}
+          errors={errors}
         />
         <Experience
           experienceData={experienceData}

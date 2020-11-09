@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Section, H2, Block, AddButton } from './Shared';
-import EducationFormContainer from './EducationFormContainer';
-
-
+import EducationFormComponent from './EducationFormComponent';
+import { useFieldArray } from 'react-hook-form';
 
 const EducationSection = styled(Section)`
   .block-larger {
@@ -11,35 +10,29 @@ const EducationSection = styled(Section)`
   }
 `;
 
+function Education({ register, control }) {
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'education'
+  });
 
-function Education({ educationData, setEducationData, register }) {
-  const handleAdd = () => {
-    const blankEducationData = {
-      school: '',
-      studyField: '',
-      degree: '',
-      schoolStartDate: '',
-      schoolEndDate: ''
-    }
-    setEducationData(data => [...data, blankEducationData])
-  }
-  
   return (
     <EducationSection>
       <H2>Education</H2>
-      {educationData.map((education, index) => {
-        return (
-          <Block className="block-larger" key={`education${index}`}>
-            <EducationFormContainer
+      {fields.map(({ id, school, studyField, degree, schoolStartDate, schoolEndDate }, index) => {
+        const schoolData = { school, studyField, degree, schoolStartDate, schoolEndDate }
+        return(
+          <Block className="block-larger" key={id}>
+            <EducationFormComponent
               index={index}
-              education={education}
-              educationData={educationData}
-              setEducationData={setEducationData}
               register={register}
+              schoolData={schoolData}
+              remove={remove}
             />
-          </Block>)
+          </Block>
+        )
       })}
-      <AddButton size={30} onClick={handleAdd} />
+      <AddButton type="button" size={30} onClick={() => append({})} />     
     </EducationSection>
   )
 }
