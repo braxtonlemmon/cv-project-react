@@ -17,7 +17,6 @@ const Form = styled.form`
 
 function MainFormComponent({
   personalData,
-  setPersonalData,
   onSubmit,
   handleSubmit,
   register,
@@ -30,6 +29,7 @@ function MainFormComponent({
         <Personal 
           register={register}
           errors={errors}
+          personalData={personalData}
         />
         <Education
           register={register}

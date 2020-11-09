@@ -30,13 +30,8 @@ const Main = styled.main`
   margin-bottom: 30px;
 `;
 
-const SubmitButton = styled(Button)`
-  cursor: pointer;
-`;
-
 function App() {
   const [isEditing, setEditing] = useState(true);
-  const [canSubmit, setCanSubmit] = useState(false);
   // const [personalData, setPersonalData] = useState({
   //   firstName: '',
   //   lastName: '',
@@ -99,9 +94,6 @@ function App() {
       workEndDate: '05/01/2015'
     }
   ])
-  const handleSubmit = () => {
-    setEditing(false);
-  }
 
   const handleEdit = () => {
     setEditing(true);
@@ -127,21 +119,6 @@ function App() {
               isEditing={isEditing}
               setEditing={setEditing}
             />
-            {/* <Personal 
-              personalData={personalData} 
-              setPersonalData={setPersonalData}
-              setCanSubmit={setCanSubmit}
-              canSubmit={canSubmit}
-            />
-            <Education 
-              educationData={educationData}
-              setEducationData={setEducationData}
-            />
-            <Experience 
-              experienceData={experienceData}
-              setExperienceData={setExperienceData}
-            /> */}
-            {/* <SubmitButton canSubmit={canSubmit} onClick={handleSubmit}>Submit</SubmitButton> */}
           </Main>
         }
         {
