@@ -15,12 +15,12 @@ const Wrapper = styled.div`
   }
 `;
 
-function PersonalPretty({ personalData }) {
+function PersonalPretty({ formData }) {
   return (
     <Wrapper>
-      <H2>{personalData.firstName} {personalData.lastName}</H2>
-      <p>{personalData.email}</p>
-      <p>{personalData.phone}</p>
+      <H2>{formData.firstName} {formData.lastName}</H2>
+      <p>{formData.email}</p>
+      <p>{formData.phone}</p>
     </Wrapper>
   )
 }

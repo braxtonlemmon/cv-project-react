@@ -32,33 +32,21 @@ const Main = styled.main`
 
 function App() {
   const [isEditing, setEditing] = useState(true);
-  // const [personalData, setPersonalData] = useState({
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   phone: ''
-  // })
-
-  // const [educationData, setEducationData] = useState([
-  //   {
-  //     school: '',
-  //     studyField: '',
-  //     degree: '',
-  //     schoolStartDate: '',
-  //     schoolEndDate: ''
-  //   }
-  // ]);
-  
-
-  // const [experienceData, setExperienceData] = useState([
-  //   {
-  //     company: '',
-  //     position: '',
-  //     responsibilities: '',
-  //     workStartDate: '',
-  //     workEndDate: ''
-  //   }
-  // ])
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    education: [
+      {
+        school: '',
+        studyField: '',
+        degree: '',
+        schoolStartDate: '',
+        schoolEndDate: ''
+      }
+    ]
+  });
 
   const [personalData, setPersonalData] = useState({
     firstName: 'Braxton',
@@ -110,12 +98,8 @@ function App() {
           <Main>
             <Intro />
             <MainFormContainer 
-              personalData={personalData}
-              setPersonalData={setPersonalData}
-              educationData={educationData}
-              setEducationData={setEducationData}
-              experienceData={experienceData}
-              setExperienceData={setExperienceData}
+              formData={formData}
+              setFormData={setFormData}
               isEditing={isEditing}
               setEditing={setEditing}
             />
@@ -124,6 +108,7 @@ function App() {
         {
           !isEditing &&
           <Result 
+            formData={formData}
             handleEdit={handleEdit}
             personalData={personalData}
             educationData={educationData}

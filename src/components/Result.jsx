@@ -29,11 +29,11 @@ const Box = styled(wrapper)`
 `;
 
 
-function Result({ handleEdit, personalData, educationData, experienceData }) {
+function Result({ handleEdit, personalData, educationData, experienceData, formData }) {
   return (
     <Wrapper>
       <Box>
-        <PersonalPretty personalData={personalData} />
+        <PersonalPretty formData={formData} />
         <h3>Education</h3>
         {educationData.map(education => <EducationPretty education={education} />)}
         <h3>Experience</h3>

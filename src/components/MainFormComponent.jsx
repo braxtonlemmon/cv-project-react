@@ -16,12 +16,12 @@ const Form = styled.form`
 `;
 
 function MainFormComponent({
-  personalData,
   onSubmit,
   handleSubmit,
   register,
   errors,
-  control
+  control,
+  formData
 }) {
   return (
     <Wrapper>
@@ -29,17 +29,19 @@ function MainFormComponent({
         <Personal 
           register={register}
           errors={errors}
-          personalData={personalData}
+          formData={formData}
         />
         <Education
           register={register}
           control={control}
           errors={errors}
+          formData={formData}
         />
         <Experience
           register={register}
           control={control}
           errors={errors}
+          formData={formData}
         />
         <Button type="submit">Submit</Button>
       </Form>
