@@ -15,7 +15,6 @@ function EducationFormContainer({ index, educationData, setEducationData, regist
     dataCopy.splice(index, 1);
     setEducationData(dataCopy);
   }
-  console.log(index);
 
   return (
     <EducationFormComponent 

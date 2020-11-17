@@ -10,11 +10,23 @@ const EducationSection = styled(Section)`
   }
 `;
 
-function Education({ register, control, errors, formData }) {
+function Education({ register, control, errors, formData, educationData, setEducationData }) {
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'education'
   });
+
+  const handleAdd = () => {
+    let dataCopy = [...educationData];
+    setEducationData(dataCopy, {
+      company: '',
+      position: '',
+      responsibilities: '',
+      workStartDate: '',
+      workEndDate: ''
+    })
+    append({})
+  }
 
   return (
     <EducationSection>
@@ -29,12 +41,14 @@ function Education({ register, control, errors, formData }) {
               // schoolData={schoolData}
               remove={remove}
               errors={errors}
-              schoolData={formData.education[index]}
+              defaultData={educationData[index]}
+              // schoolData={formData.education[index]}
+              schoolData={schoolData}
             />
           </Block>
         )
       })}
-      <AddButton type="button" size={30} onClick={() => append({})} />     
+      <AddButton type="button" size={30} onClick={() => handleAdd()} />     
     </EducationSection>
   )
 }

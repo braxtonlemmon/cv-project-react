@@ -7,7 +7,11 @@ function MainFormContainer({
   isEditing,
   setEditing,
   formData,
-  setFormData
+  setFormData,
+  personalData,
+  setPersonalData,
+  educationData,
+  setEducationData
 }) {
   
   const { register, handleSubmit, errors, control } = useForm();
@@ -15,8 +19,15 @@ function MainFormContainer({
   const onSubmit = (data, e) => {
     e.preventDefault();
     setEditing(false)
-    console.log(data);
-    setFormData(data);
+    // setFormData(data);
+    setPersonalData({
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phone: data.phone
+    })
+    setEducationData(data.education)
+
   }
 
   return (
@@ -27,6 +38,9 @@ function MainFormContainer({
       errors={errors}
       control={control}
       formData={formData}
+      personalData={personalData}
+      educationData={educationData}
+      setEducationData={setEducationData}
     />
   )
 }

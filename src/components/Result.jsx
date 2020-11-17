@@ -30,14 +30,16 @@ const Box = styled(wrapper)`
 
 
 function Result({ handleEdit, personalData, educationData, experienceData, formData }) {
+  console.log(formData)
+  
   return (
     <Wrapper>
       <Box>
-        <PersonalPretty formData={formData} />
+        <PersonalPretty personalData={personalData} />
         <h3>Education</h3>
-        {educationData.map(education => <EducationPretty education={education} />)}
+        {formData.education.length > 1 && formData.education.map(education => <EducationPretty education={education} />)}
         <h3>Experience</h3>
-        {experienceData.map(experience => <ExperiencePretty experience={experience} />)}
+        {formData.experience.length > 1 && formData.experienceData.map(experience => <ExperiencePretty experience={experience} />)}
       </Box>
       <Button onClick={handleEdit}>Edit</Button>
     </Wrapper>

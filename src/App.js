@@ -37,6 +37,8 @@ function App() {
     lastName: '',
     email: '',
     phone: '',
+    // education: [],
+    // experience: [],
     education: [
       {
         school: '',
@@ -45,43 +47,62 @@ function App() {
         schoolStartDate: '',
         schoolEndDate: ''
       }
+    ],
+    experience: [
+      {
+        company: '',
+        position: '',
+        responsibilities: '',
+        workStartDate: '',
+        workEndDate: ''
+      }
     ]
   });
 
   const [personalData, setPersonalData] = useState({
-    firstName: 'Braxton',
-    lastName: 'Lemmon',
-    email: 'braxtonlemmon@gmail.com',
-    phone: '801-960-0831'
-  })
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: ''
+  });
 
-  const [educationData, setEducationData] = useState([
-    {
-      school: 'Brigham Young University',
-      studyField: 'Recreational Therapy',
-      degree: 'Bachelor',
-      schoolStartDate: '08/01/2007',
-      schoolEndDate: '08/01/2014'
-    },
-    {
-      school: 'UVU',
-      studyField: 'Recreational Therapy',
-      degree: 'Bachelor',
-      schoolStartDate: '08/01/2007',
-      schoolEndDate: '08/01/2014'
-    },
-  ]);
+  const [educationData, setEducationData] = useState([]);
+  const [experienceData, setExperienceData] = useState([]);
+
+  // const [personalData, setPersonalData] = useState({
+  //   firstName: 'Braxton',
+  //   lastName: 'Lemmon',
+  //   email: 'braxtonlemmon@gmail.com',
+  //   phone: '801-960-0831'
+  // })
+
+  // const [educationData, setEducationData] = useState([
+  //   {
+  //     school: 'Brigham Young University',
+  //     studyField: 'Recreational Therapy',
+  //     degree: 'Bachelor',
+  //     schoolStartDate: '08/01/2007',
+  //     schoolEndDate: '08/01/2014'
+  //   },
+  //   {
+  //     school: 'UVU',
+  //     studyField: 'Recreational Therapy',
+  //     degree: 'Bachelor',
+  //     schoolStartDate: '08/01/2007',
+  //     schoolEndDate: '08/01/2014'
+  //   },
+  // ]);
   
 
-  const [experienceData, setExperienceData] = useState([
-    {
-      company: 'Tapif',
-      position: 'Language Assistant',
-      responsibilities: 'Teach English',
-      workStartDate: '10/01/2014',
-      workEndDate: '05/01/2015'
-    }
-  ])
+  // const [experienceData, setExperienceData] = useState([
+  //   {
+  //     company: 'Tapif',
+  //     position: 'Language Assistant',
+  //     responsibilities: 'Teach English',
+  //     workStartDate: '10/01/2014',
+  //     workEndDate: '05/01/2015'
+  //   }
+  // ])
 
   const handleEdit = () => {
     setEditing(true);
@@ -98,6 +119,10 @@ function App() {
           <Main>
             <Intro />
             <MainFormContainer 
+              personalData={personalData}
+              setPersonalData={setPersonalData}
+              educationData={educationData}
+              setEducationData={setEducationData}
               formData={formData}
               setFormData={setFormData}
               isEditing={isEditing}
