@@ -11,10 +11,13 @@ function MainFormContainer({
   personalData,
   setPersonalData,
   educationData,
-  setEducationData
+  setEducationData,
+  experienceData,
+  setExperienceData
 }) {
   
-  const { register, handleSubmit, errors, control } = useForm();
+  const { register, handleSubmit, errors, control } = useForm({
+  });
   
   const onSubmit = (data, e) => {
     e.preventDefault();
@@ -27,7 +30,7 @@ function MainFormContainer({
       phone: data.phone
     })
     setEducationData(data.education)
-
+    setExperienceData(data.experience)
   }
 
   return (

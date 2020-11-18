@@ -37,9 +37,9 @@ function Result({ handleEdit, personalData, educationData, experienceData, formD
       <Box>
         <PersonalPretty personalData={personalData} />
         <h3>Education</h3>
-        {formData.education.length > 1 && formData.education.map(education => <EducationPretty education={education} />)}
+        {educationData.map(education => <EducationPretty education={education} />)}
         <h3>Experience</h3>
-        {formData.experience.length > 1 && formData.experienceData.map(experience => <ExperiencePretty experience={experience} />)}
+        {experienceData.map(experience => <ExperiencePretty experience={experience} />)}
       </Box>
       <Button onClick={handleEdit}>Edit</Button>
     </Wrapper>

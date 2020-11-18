@@ -123,6 +123,8 @@ function App() {
               setPersonalData={setPersonalData}
               educationData={educationData}
               setEducationData={setEducationData}
+              experienceData={experienceData}
+              setExperienceData={setExperienceData}
               formData={formData}
               setFormData={setFormData}
               isEditing={isEditing}
