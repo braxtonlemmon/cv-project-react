@@ -9,7 +9,6 @@ const Wrapper = styled(wrapper)`
 const Row = styled(row)``;
 
 function EducationFormComponent({ register, index, remove, schoolData, errors, defaultData, educationData }) {  
-  console.log(defaultData);
   return(
     <Wrapper>
         <Row>
