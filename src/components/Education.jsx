@@ -44,6 +44,7 @@ function Education({ register, control, errors, formData, educationData, setEduc
               defaultData={educationData[index]}
               // schoolData={formData.education[index]}
               schoolData={schoolData}
+              educationData={educationData}
             />
           </Block>
         )

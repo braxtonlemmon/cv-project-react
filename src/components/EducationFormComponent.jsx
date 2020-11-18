@@ -8,7 +8,7 @@ const Wrapper = styled(wrapper)`
 
 const Row = styled(row)``;
 
-function EducationFormComponent({ register, index, remove, schoolData, errors, defaultData }) {  
+function EducationFormComponent({ register, index, remove, schoolData, errors, defaultData, educationData }) {  
   console.log(defaultData);
   return(
     <Wrapper>
@@ -18,7 +18,7 @@ function EducationFormComponent({ register, index, remove, schoolData, errors, d
             type="text"
             id={`education[${index}].school`}
             name={`education[${index}].school`}
-            // defaultValue={defaultData.school || ''}
+            defaultValue={educationData[index] ? educationData[index].school : ''}
             ref={register({ required: 'School is required.' })}
           />
         </Row>
@@ -28,7 +28,7 @@ function EducationFormComponent({ register, index, remove, schoolData, errors, d
             type="text"
             id={`education[${index}].studyField`}
             name={`education[${index}].studyField`}
-            // defaultValue={defaultData.studyField}
+            defaultValue={educationData[index] ? educationData[index].studyField : ''}
             ref={register({ required: 'Study field is required.' })}
           />
         </Row>
@@ -38,7 +38,7 @@ function EducationFormComponent({ register, index, remove, schoolData, errors, d
             type="text"
             id={`education[${index}].degree`}
             name={`education[${index}].degree`}
-            // defaultValue={defaultData.degree}
+            defaultValue={educationData[index] ? educationData[index].degree : ''}
             ref={register({ required: 'Degree field is required' })}
           />
         </Row>
@@ -48,7 +48,7 @@ function EducationFormComponent({ register, index, remove, schoolData, errors, d
             type="date"
             id={`education[${index}].schoolStartDate`}
             name={`education[${index}].schoolStartDate`}
-            // defaultValue={defaultData.schoolStartDate}
+            defaultValue={educationData[index] ? educationData[index].schoolStartDate : ''}
             ref={register({ required: 'Start date is required' })}
           />
         </Row>
@@ -58,7 +58,7 @@ function EducationFormComponent({ register, index, remove, schoolData, errors, d
             type="date"
             id={`education[${index}].schoolEndDate`}
             name={`education[${index}].schoolEndDate`}
-            // defaultValue={defaultData.schoolEndDate}
+            defaultValue={educationData[index] ? educationData[index].schoolEndDate : ''}
             ref={register({ required: 'End date is required' })}
           />
         </Row>

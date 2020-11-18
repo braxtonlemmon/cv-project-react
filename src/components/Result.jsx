@@ -31,7 +31,8 @@ const Box = styled(wrapper)`
 
 function Result({ handleEdit, personalData, educationData, experienceData, formData }) {
   console.log(formData)
-  
+  console.log(personalData);
+  console.log(educationData);
   return (
     <Wrapper>
       <Box>
