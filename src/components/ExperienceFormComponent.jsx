@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Wrapper = styled(wrapper)``;
 const Row = styled(row)``;
 
-function ExperienceFormComponent({ register, index, remove, workData, errors, experienceData }) {
+function ExperienceFormComponent({ register, index, remove, experienceData }) {
   return (
     <Wrapper>
         <Row>

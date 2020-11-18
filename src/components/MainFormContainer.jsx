@@ -40,12 +40,9 @@ function MainFormContainer({
       register={register}
       errors={errors}
       control={control}
-      formData={formData}
       personalData={personalData}
       educationData={educationData}
-      setEducationData={setEducationData}
       experienceData={experienceData}
-      setExperienceData={setExperienceData}
     />
   )
 }

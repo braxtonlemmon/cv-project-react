@@ -21,12 +21,9 @@ function MainFormComponent({
   register,
   errors,
   control,
-  formData,
   personalData,
   educationData,
-  setEducationData,
   experienceData,
-  setExperienceData
 }) {
   return (
     <Wrapper>
@@ -34,22 +31,18 @@ function MainFormComponent({
         <Personal 
           register={register}
           errors={errors}
-          formData={formData}
           personalData={personalData}
         />
         <Education
           register={register}
           control={control}
           errors={errors}
-          formData={formData}
           educationData={educationData}
-          setEducationData={setEducationData}
         />
         <Experience
           register={register}
           control={control}
           errors={errors}
-          formData={formData}
           experienceData={experienceData}
         />
         <Button type="submit">Submit</Button>

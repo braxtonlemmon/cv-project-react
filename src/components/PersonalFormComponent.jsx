@@ -9,7 +9,7 @@ const Row = styled(row)`
   font-family: 'Gayathri', sans-serif;
 `;
 
-function PersonalFormComponent({ register, errors, formData, personalData }) {
+function PersonalFormComponent({ register, errors, personalData }) {
   return (
     <Wrapper>
         <Row>

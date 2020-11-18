@@ -19,14 +19,12 @@ function Experience({ register, control, errors, experienceData }) {
   return (
     <ExperienceSection>
       <H2>Experience</H2>
-      {fields.map(({ id, company, position, responsibilities, workStartDate, workEndDate }, index) => { 
-        const workData = { company, position, responsibilities, workStartDate, workEndDate }
+      {fields.map(({ id }, index) => { 
         return(
           <Block className="block-larger" key={id}>
             <ExperienceFormComponent
               index={index}
               register={register}
-              workData={workData}
               remove={remove}
               errors={errors}
               experienceData={experienceData}

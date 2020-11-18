@@ -2,13 +2,11 @@ import React from 'react';
 import { wrapper, row, TrashButton } from './Shared';
 import styled from 'styled-components';
 
-const Wrapper = styled(wrapper)`
-
-`;
+const Wrapper = styled(wrapper)``;
 
 const Row = styled(row)``;
 
-function EducationFormComponent({ register, index, remove, schoolData, errors, defaultData, educationData }) {  
+function EducationFormComponent({ register, index, remove, educationData }) {  
   return(
     <Wrapper>
         <Row>
