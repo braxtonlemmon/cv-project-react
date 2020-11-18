@@ -24,7 +24,9 @@ function MainFormComponent({
   formData,
   personalData,
   educationData,
-  setEducationData
+  setEducationData,
+  experienceData,
+  setExperienceData
 }) {
   return (
     <Wrapper>
@@ -48,6 +50,7 @@ function MainFormComponent({
           control={control}
           errors={errors}
           formData={formData}
+          experienceData={experienceData}
         />
         <Button type="submit">Submit</Button>
       </Form>

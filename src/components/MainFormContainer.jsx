@@ -44,6 +44,8 @@ function MainFormContainer({
       personalData={personalData}
       educationData={educationData}
       setEducationData={setEducationData}
+      experienceData={experienceData}
+      setExperienceData={setExperienceData}
     />
   )
 }

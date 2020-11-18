@@ -10,7 +10,7 @@ const ExperienceSection = styled(Section)`
   }
 `;
 
-function Experience({ register, control, errors }) {
+function Experience({ register, control, errors, experienceData }) {
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'experience'
@@ -29,6 +29,7 @@ function Experience({ register, control, errors }) {
               workData={workData}
               remove={remove}
               errors={errors}
+              experienceData={experienceData}
             />
           </Block>
         )
