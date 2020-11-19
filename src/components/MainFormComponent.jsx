@@ -24,6 +24,9 @@ function MainFormComponent({
   personalData,
   educationData,
   experienceData,
+  setValue,
+  watch,
+  reset
 }) {
   return (
     <Wrapper>
@@ -32,12 +35,16 @@ function MainFormComponent({
           register={register}
           errors={errors}
           personalData={personalData}
+          setValue={setValue}
         />
         <Education
           register={register}
           control={control}
           errors={errors}
           educationData={educationData}
+          setValue={setValue}
+          watch={watch}
+          reset={reset}
         />
         <Experience
           register={register}

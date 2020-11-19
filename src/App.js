@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import styled from 'styled-components';
 import GlobalStyle from './themes/globalStyles';
 import Theme from './themes/theme';
 import { Reset } from 'styled-reset';
 import Intro from './components/Intro';
-import Personal from './components/Personal';
-import Education from './components/Education';
-import Experience from './components/Experience';
 import Result from './components/Result';
 import Footer from './components/Footer';
-import { Button } from './components/Shared';
-import { FaBorderNone } from 'react-icons/fa';
 import MainFormContainer from './components/MainFormContainer';
 
 const Wrapper = styled.div`
@@ -32,77 +27,29 @@ const Main = styled.main`
 
 function App() {
   const [isEditing, setEditing] = useState(true);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    // education: [],
-    // experience: [],
-    education: [
-      {
-        school: '',
-        studyField: '',
-        degree: '',
-        schoolStartDate: '',
-        schoolEndDate: ''
-      }
-    ],
-    experience: [
-      {
-        company: '',
-        position: '',
-        responsibilities: '',
-        workStartDate: '',
-        workEndDate: ''
-      }
-    ]
-  });
-
   const [personalData, setPersonalData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phone: ''
   });
-
-  const [educationData, setEducationData] = useState([]);
+  const [educationData, setEducationData] = useState([
+    {
+      school: 'Aaa',
+      studyField: 'Aa',
+      degree: 'A',
+      schoolStartDate: '',
+      schoolEndDate: ''
+    },
+    {
+      school: 'BBB',
+      studyField: 'BBB',
+      degree: 'BBB',
+      schoolStartDate: '',
+      schoolEndDate: ''
+    },
+  ]);
   const [experienceData, setExperienceData] = useState([]);
-
-  // const [personalData, setPersonalData] = useState({
-  //   firstName: 'Braxton',
-  //   lastName: 'Lemmon',
-  //   email: 'braxtonlemmon@gmail.com',
-  //   phone: '801-960-0831'
-  // })
-
-  // const [educationData, setEducationData] = useState([
-  //   {
-  //     school: 'Brigham Young University',
-  //     studyField: 'Recreational Therapy',
-  //     degree: 'Bachelor',
-  //     schoolStartDate: '08/01/2007',
-  //     schoolEndDate: '08/01/2014'
-  //   },
-  //   {
-  //     school: 'UVU',
-  //     studyField: 'Recreational Therapy',
-  //     degree: 'Bachelor',
-  //     schoolStartDate: '08/01/2007',
-  //     schoolEndDate: '08/01/2014'
-  //   },
-  // ]);
-  
-
-  // const [experienceData, setExperienceData] = useState([
-  //   {
-  //     company: 'Tapif',
-  //     position: 'Language Assistant',
-  //     responsibilities: 'Teach English',
-  //     workStartDate: '10/01/2014',
-  //     workEndDate: '05/01/2015'
-  //   }
-  // ])
 
   const handleEdit = () => {
     setEditing(true);
@@ -125,8 +72,6 @@ function App() {
               setEducationData={setEducationData}
               experienceData={experienceData}
               setExperienceData={setExperienceData}
-              formData={formData}
-              setFormData={setFormData}
               isEditing={isEditing}
               setEditing={setEditing}
             />
@@ -135,7 +80,6 @@ function App() {
         {
           !isEditing &&
           <Result 
-            formData={formData}
             handleEdit={handleEdit}
             personalData={personalData}
             educationData={educationData}

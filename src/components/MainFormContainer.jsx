@@ -4,10 +4,7 @@ import MainFormComponent from './MainFormComponent';
 
 // I will make this one single form, instead of three separate forms as I have it now
 function MainFormContainer({
-  isEditing,
   setEditing,
-  formData,
-  setFormData,
   personalData,
   setPersonalData,
   educationData,
@@ -16,13 +13,13 @@ function MainFormContainer({
   setExperienceData
 }) {
   
-  const { register, handleSubmit, errors, control } = useForm({
+  const { register, handleSubmit, errors, control, setValue, watch, reset } = useForm({
+    shouldUnregister: false
   });
   
   const onSubmit = (data, e) => {
     e.preventDefault();
     setEditing(false)
-    // setFormData(data);
     setPersonalData({
       firstName: data.firstName,
       lastName: data.lastName,
@@ -32,6 +29,8 @@ function MainFormContainer({
     setEducationData(data.education)
     setExperienceData(data.experience)
   }
+
+  // const education = watch("education");
 
   return (
     <MainFormComponent
@@ -43,6 +42,9 @@ function MainFormContainer({
       personalData={personalData}
       educationData={educationData}
       experienceData={experienceData}
+      setValue={setValue}
+      watch={watch}
+      reset={reset}
     />
   )
 }
