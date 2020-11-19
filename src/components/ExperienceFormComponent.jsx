@@ -5,7 +5,8 @@ import styled from 'styled-components';
 const Wrapper = styled(wrapper)``;
 const Row = styled(row)``;
 
-function ExperienceFormComponent({ register, index, remove, experienceData }) {
+function ExperienceFormComponent({ register, index, remove, experienceData, item }) {
+  const { company, position, responsibilities, workStartDate, workEndDate } = item;
   return (
     <Wrapper>
         <Row>
@@ -14,7 +15,8 @@ function ExperienceFormComponent({ register, index, remove, experienceData }) {
             type="text"
             id={`experience[${index}].company`}
             name={`experience[${index}].company`}
-            defaultValue={experienceData[index] ? experienceData[index].company : ''}
+            // defaultValue={experienceData[index] ? experienceData[index].company : ''}
+            defaultValue={company ? company : ''}
             ref={register({ required: 'Company is required' })}
           />
         </Row>
@@ -24,7 +26,8 @@ function ExperienceFormComponent({ register, index, remove, experienceData }) {
             type="text"
             id={`experience[${index}].position`}
             name={`experience[${index}].position`}
-            defaultValue={experienceData[index] ? experienceData[index].position : ''}
+            // defaultValue={experienceData[index] ? experienceData[index].position : ''}
+            defaultValue={position ? position : ''}
             ref={register({ required: 'Position is required' })}
           />
         </Row>
@@ -33,7 +36,8 @@ function ExperienceFormComponent({ register, index, remove, experienceData }) {
           <textarea
             id={`experience[${index}].responsibilities`}
             name={`experience[${index}].responsibilities`}
-            defaultValue={experienceData[index] ? experienceData[index].responsibilities : ''}
+            // defaultValue={experienceData[index] ? experienceData[index].responsibilities : ''}
+            defaultValue={responsibilities ? responsibilities : ''}
             ref={register({ required: 'Responsibilities are required' })}
           />
         </Row>
@@ -43,7 +47,8 @@ function ExperienceFormComponent({ register, index, remove, experienceData }) {
             type="date"
             id={`experience[${index}].workStartDate`}
             name={`experience[${index}].workStartDate`}
-            defaultValue={experienceData[index] ? experienceData[index].workStartDate : ''}
+            // defaultValue={experienceData[index] ? experienceData[index].workStartDate : ''}
+            defaultValue={workStartDate ? workStartDate : ''}
             ref={register({ required: 'Start date is required' })}
           />
         </Row>
@@ -53,7 +58,8 @@ function ExperienceFormComponent({ register, index, remove, experienceData }) {
             type="date"
             id={`experience[${index}].workEndDate`}
             name={`experience[${index}].workEndDate`}
-            defaultValue={experienceData[index] ? experienceData[index].workEndDate : ''}
+            // defaultValue={experienceData[index] ? experienceData[index].workEndDate : ''}
+            defaultValue={workEndDate ? workEndDate : ''}
             ref={register({ required: 'End date is required' })}
           />
         </Row>

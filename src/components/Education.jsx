@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Section, H2, Block, AddButton } from './Shared';
 import EducationFormComponent from './EducationFormComponent';
@@ -10,24 +10,15 @@ const EducationSection = styled(Section)`
   }
 `;
 
-function Education({ register, control, errors, educationData, setValue, watch, reset }) {
+function Education({ register, control, errors }) {
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'education'
   });
 
-  useEffect(() => {
-    setTimeout(() => {
-      reset({
-        education: educationData
-      });
-    }, 500)
-  }, [reset])
-
   return (
     <EducationSection>
       <H2>Education</H2>
-      {/* {fields.map(({ id, school }, index) => { */}
       {fields.map((item, index) => {  
         return(
           <Block className="block-larger" key={item.id}>
@@ -36,7 +27,6 @@ function Education({ register, control, errors, educationData, setValue, watch, 
               register={register}
               remove={remove}
               errors={errors}
-              educationData={educationData}
               item={item}
             />
           </Block>

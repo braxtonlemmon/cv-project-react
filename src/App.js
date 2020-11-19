@@ -28,10 +28,10 @@ const Main = styled.main`
 function App() {
   const [isEditing, setEditing] = useState(true);
   const [personalData, setPersonalData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: ''
+    firstName: 'Braxton',
+    lastName: 'Lemmon',
+    email: 'brax@brax.com',
+    phone: '800'
   });
   const [educationData, setEducationData] = useState([
     {
@@ -49,7 +49,15 @@ function App() {
       schoolEndDate: ''
     },
   ]);
-  const [experienceData, setExperienceData] = useState([]);
+  const [experienceData, setExperienceData] = useState([
+    {
+      company: 'Ooo',
+      position: 'Oo',
+      responsibilities: 'O',
+      workStartDate: '',
+      workEndDate: ''
+    }
+  ]);
 
   const handleEdit = () => {
     setEditing(true);

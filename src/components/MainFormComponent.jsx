@@ -4,6 +4,7 @@ import { wrapper, Button } from './Shared';
 import Personal from './Personal';
 import Education from './Education';
 import Experience from './Experience';
+import Reset from './Reset';
 
 const Wrapper = styled(wrapper)`
 `;
@@ -42,6 +43,8 @@ function MainFormComponent({
           control={control}
           errors={errors}
           educationData={educationData}
+          experienceData={experienceData}
+          personalData={personalData}
           setValue={setValue}
           watch={watch}
           reset={reset}
@@ -51,6 +54,13 @@ function MainFormComponent({
           control={control}
           errors={errors}
           experienceData={experienceData}
+          reset={reset}
+        />
+        <Reset 
+          personalData={personalData}
+          educationData={educationData}
+          experienceData={experienceData}
+          reset={reset}
         />
         <Button type="submit">Submit</Button>
       </Form>
