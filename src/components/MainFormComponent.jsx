@@ -42,12 +42,6 @@ function MainFormComponent({
           register={register}
           control={control}
           errors={errors}
-          educationData={educationData}
-          experienceData={experienceData}
-          personalData={personalData}
-          setValue={setValue}
-          watch={watch}
-          reset={reset}
         />
         <Experience
           register={register}
