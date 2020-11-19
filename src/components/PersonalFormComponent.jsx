@@ -9,7 +9,7 @@ const Row = styled(row)`
   font-family: 'Gayathri', sans-serif;
 `;
 
-function PersonalFormComponent({ register, errors, personalData }) {
+function PersonalFormComponent({ register, errors }) {
   return (
     <Wrapper>
         <Row>
@@ -18,7 +18,6 @@ function PersonalFormComponent({ register, errors, personalData }) {
             type="text"
             id="firstName"
             name="firstName"
-            defaultValue={personalData.firstName || ''}
             ref={register({ required: 'First name is required.' })}
           />
         </Row>
@@ -29,7 +28,6 @@ function PersonalFormComponent({ register, errors, personalData }) {
             type="text"
             id="lastName"
             name="lastName"
-            defaultValue={personalData.lastName || ''}
             ref={register({ required: 'Last name is required.' })}
           />
         </Row>
@@ -40,7 +38,6 @@ function PersonalFormComponent({ register, errors, personalData }) {
             type="email"
             id="email"
             name="email"
-            defaultValue={personalData.email || ''}
             ref={register({ required: 'Email is required.' })}
           />
         </Row>
@@ -51,7 +48,6 @@ function PersonalFormComponent({ register, errors, personalData }) {
             type="tel"
             id="phone"
             name="phone"
-            defaultValue={personalData.phone || ''}
             ref={register({ required: 'Phone number is required.' })}
           />
         </Row>

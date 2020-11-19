@@ -13,8 +13,14 @@ function MainFormContainer({
   setExperienceData
 }) {
   
-  const { register, handleSubmit, errors, control, setValue, watch, reset } = useForm({
-    shouldUnregister: false
+  const { register, handleSubmit, errors, control, reset } = useForm({
+    shouldUnregister: false,
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: ''
+    }
   });
   
   const onSubmit = (data, e) => {
@@ -30,8 +36,6 @@ function MainFormContainer({
     setExperienceData(data.experience)
   }
 
-  // const education = watch("education");
-
   return (
     <MainFormComponent
       handleSubmit={handleSubmit}
@@ -42,8 +46,6 @@ function MainFormContainer({
       personalData={personalData}
       educationData={educationData}
       experienceData={experienceData}
-      setValue={setValue}
-      watch={watch}
       reset={reset}
     />
   )

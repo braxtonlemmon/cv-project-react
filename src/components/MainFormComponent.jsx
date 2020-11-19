@@ -25,8 +25,6 @@ function MainFormComponent({
   personalData,
   educationData,
   experienceData,
-  setValue,
-  watch,
   reset
 }) {
   return (
@@ -35,8 +33,6 @@ function MainFormComponent({
         <Personal 
           register={register}
           errors={errors}
-          personalData={personalData}
-          setValue={setValue}
         />
         <Education
           register={register}
@@ -47,8 +43,6 @@ function MainFormComponent({
           register={register}
           control={control}
           errors={errors}
-          experienceData={experienceData}
-          reset={reset}
         />
         <Reset 
           personalData={personalData}
