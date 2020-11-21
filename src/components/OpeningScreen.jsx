@@ -45,7 +45,7 @@ const PopUp = styled.div`
   }
 `;
 
-function OpeningScreen() {
+function OpeningScreen({ setNew }) {
   return (
     <Wrapper>
       <PopUp>
@@ -56,7 +56,7 @@ function OpeningScreen() {
         <p>
           When you are ready to start, hit Go!
         </p>
-        <Button>Go!</Button>
+        <Button onClick={() => setNew(false)}>Go!</Button>
       </PopUp>
     </Wrapper>
   )

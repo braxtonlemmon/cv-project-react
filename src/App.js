@@ -51,7 +51,9 @@ function App() {
         <Header />
         {
           isNew &&
-          <OpeningScreen />
+          <OpeningScreen 
+            setNew={setNew}
+          />
         }
         {
           isEditing &&
