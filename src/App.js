@@ -8,6 +8,7 @@ import Intro from './components/Intro';
 import Result from './components/Result';
 import Footer from './components/Footer';
 import MainFormContainer from './components/MainFormContainer';
+import OpeningScreen from './components/OpeningScreen';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
 `;
 
 const Main = styled.main`
@@ -26,6 +28,7 @@ const Main = styled.main`
 `;
 
 function App() {
+  const [isNew, setNew] = useState(true);
   const [isEditing, setEditing] = useState(true);
   const [personalData, setPersonalData] = useState({
     firstName: '',
@@ -46,6 +49,10 @@ function App() {
         <Reset />
         <GlobalStyle />
         <Header />
+        {
+          isNew &&
+          <OpeningScreen />
+        }
         {
           isEditing &&
           <Main>
