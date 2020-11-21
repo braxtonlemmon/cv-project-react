@@ -28,36 +28,13 @@ const Main = styled.main`
 function App() {
   const [isEditing, setEditing] = useState(true);
   const [personalData, setPersonalData] = useState({
-    firstName: 'Braxton',
-    lastName: 'Lemmon',
-    email: 'brax@brax.com',
-    phone: '800'
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: ''
   });
-  const [educationData, setEducationData] = useState([
-    {
-      school: 'Aaa',
-      studyField: 'Aa',
-      degree: 'A',
-      schoolStartDate: '',
-      schoolEndDate: ''
-    },
-    {
-      school: 'BBB',
-      studyField: 'BBB',
-      degree: 'BBB',
-      schoolStartDate: '',
-      schoolEndDate: ''
-    },
-  ]);
-  const [experienceData, setExperienceData] = useState([
-    {
-      company: 'Ooo',
-      position: 'Oo',
-      responsibilities: 'O',
-      workStartDate: '',
-      workEndDate: ''
-    }
-  ]);
+  const [educationData, setEducationData] = useState([]);
+  const [experienceData, setExperienceData] = useState([]);
 
   const handleEdit = () => {
     setEditing(true);
