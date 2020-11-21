@@ -28,6 +28,7 @@ const PopUp = styled.div`
     color: white;
     margin-bottom: 30px;
     margin-top: 30px;
+    text-align: center;
   }
   p {
     text-align: center;
