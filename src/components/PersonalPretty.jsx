@@ -13,6 +13,9 @@ const Wrapper = styled.div`
   p {
     margin-bottom: 10px;
   }
+  h2 {
+    color: ${props => props.theme.colors.darker};
+  }
 `;
 
 function PersonalPretty({ personalData }) {

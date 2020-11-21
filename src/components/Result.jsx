@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { wrapper, Button, H2 } from './Shared';
 import PersonalPretty from './PersonalPretty';
 import EducationPretty from './EducationPretty';
 import ExperiencePretty from './ExperiencePretty';
+import { useReactToPrint } from 'react-to-print';
+
 const Wrapper = styled(wrapper)`
   margin: 20px 0;
   padding: 15px;
@@ -28,8 +30,25 @@ const Box = styled(wrapper)`
   width: 95%;
 `;
 
+const Printable = styled(wrapper)`
+  width: 90%;
+  margin: 20px auto;
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  button {
+    margin: 0 15px;
+  }
+`;
 
 function Result({ handleEdit, personalData, educationData, experienceData, formData }) {
+  // PRINTING
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  })
+  
   return (
     <Wrapper>
       <Box>
@@ -39,7 +58,19 @@ function Result({ handleEdit, personalData, educationData, experienceData, formD
         <h3>Experience</h3>
         {experienceData.map(experience => <ExperiencePretty experience={experience} />)}
       </Box>
-      <Button onClick={handleEdit}>Edit</Button>
+      <div style={{ display: "none"}}>
+        <Printable ref={componentRef}>
+          <PersonalPretty personalData={personalData} />
+          <h3>Education</h3>
+          {educationData.map(education => <EducationPretty education={education} />)}
+          <h3>Experience</h3>
+          {experienceData.map(experience => <ExperiencePretty experience={experience} />)}
+        </Printable>
+      </div>
+      <Buttons>
+        <Button onClick={handleEdit}>Edit</Button>
+        <Button onClick={handlePrint}>Print</Button>
+      </Buttons>
     </Wrapper>
   )
 }
