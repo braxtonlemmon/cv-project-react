@@ -27,7 +27,7 @@ function EducationFormComponent({ register, index, remove, item }) {
             id={`education[${index}].studyField`}
             name={`education[${index}].studyField`}
             defaultValue={studyField ? studyField : ''}
-            ref={register({ required: 'Study field is required.' })}
+            ref={register()}
           />
         </Row>
         <Row>
@@ -37,7 +37,7 @@ function EducationFormComponent({ register, index, remove, item }) {
             id={`education[${index}].degree`}
             name={`education[${index}].degree`}
             defaultValue={degree ? degree : ''}
-            ref={register({ required: 'Degree field is required' })}
+            ref={register()}
           />
         </Row>
         <Row>
@@ -47,7 +47,7 @@ function EducationFormComponent({ register, index, remove, item }) {
             id={`education[${index}].schoolStartDate`}
             name={`education[${index}].schoolStartDate`}
             defaultValue={schoolStartDate ? schoolStartDate : ''}
-            ref={register({ required: 'Start date is required' })}
+            ref={register()}
           />
         </Row>
         <Row>
@@ -57,7 +57,7 @@ function EducationFormComponent({ register, index, remove, item }) {
             id={`education[${index}].schoolEndDate`}
             name={`education[${index}].schoolEndDate`}
             defaultValue={schoolEndDate ? schoolEndDate : ''}
-            ref={register({ required: 'End date is required' })}
+            ref={register()}
           />
         </Row>
         <TrashButton onClick={() => remove(index)} size={25} />

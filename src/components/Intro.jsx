@@ -35,6 +35,7 @@ function Intro() {
   return (
     <Wrapper>
       <Cat size={90} />
+      <p>Fields marked with * are required.</p>
       {/* <p>You know what you need? You need a curriculum vitae, or "CV" for short. Just plug your info into this handy CV generator, and you'll be hanging out with the other CV cool cats lickety-split.</p> */}
     </Wrapper>
   )

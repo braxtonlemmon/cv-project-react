@@ -26,7 +26,13 @@ function EducationPretty({ education }) {
     <Wrapper>
       <Top>
         <p>{education.school}</p>
-        <p>{moment(education.schoolStartDate).format("MMM YYYY")} - {moment(education.schoolEndDate).format("MMM YYYY")}</p>
+        <p>
+          {
+            education.schoolStartDate && education.schoolEndDate 
+            ? `${moment(education.schoolStartDate).format("MMM YYYY")} - ${moment(education.schoolEndDate).format("MMM YYYY")}`
+            : ''
+          }
+        </p>
       </Top>
       <p>{education.studyField} - {education.degree}</p>
     </Wrapper>

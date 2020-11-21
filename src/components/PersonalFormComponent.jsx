@@ -13,7 +13,7 @@ function PersonalFormComponent({ register, errors }) {
   return (
     <Wrapper>
         <Row>
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="firstName">First Name *</label>
           <input 
             type="text"
             id="firstName"
@@ -23,7 +23,7 @@ function PersonalFormComponent({ register, errors }) {
         </Row>
         {errors.firstName && <Error>↑ First name is required!</Error>}
         <Row>
-          <label htmlFor="lastName">Last Name</label>
+          <label htmlFor="lastName">Last Name *</label>
           <input 
             type="text"
             id="lastName"
@@ -33,7 +33,7 @@ function PersonalFormComponent({ register, errors }) {
         </Row>
         {errors.lastName && <Error>↑ Last name is required!</Error>}
         <Row>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email *</label>
           <input 
             type="email"
             id="email"
@@ -43,7 +43,7 @@ function PersonalFormComponent({ register, errors }) {
         </Row>
         {errors.email && <Error>↑ Email is required!</Error>}
         <Row>
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone">Phone *</label>
           <input 
             type="tel"
             id="phone"
