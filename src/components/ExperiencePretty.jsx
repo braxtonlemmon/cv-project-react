@@ -24,7 +24,13 @@ function ExperiencePretty({ experience }) {
     <Wrapper>
       <Top>
         <p>{experience.company}</p>
-        <p>{moment(experience.workStartDate).format("MMM YYYY")} - {moment(experience.workEndDate).format("MMM YYYY")}</p>
+        <p>
+          {
+            experience.workStartDate && experience.workEndDate
+            ? `${moment(experience.workStartDate).format("MMM YYYY")} - ${moment(experience.workEndDate).format("MMM YYYY")}`
+            : ''
+          }
+        </p>
       </Top>
       <p>{experience.position}</p>
       <p>Responsibilities: {experience.responsibilities}</p>

@@ -16,7 +16,7 @@ function ExperienceFormComponent({ register, index, remove, item }) {
             id={`experience[${index}].company`}
             name={`experience[${index}].company`}
             defaultValue={company ? company : ''}
-            ref={register({ required: 'Company is required' })}
+            ref={register()}
           />
         </Row>
         <Row>
@@ -26,7 +26,7 @@ function ExperienceFormComponent({ register, index, remove, item }) {
             id={`experience[${index}].position`}
             name={`experience[${index}].position`}
             defaultValue={position ? position : ''}
-            ref={register({ required: 'Position is required' })}
+            ref={register()}
           />
         </Row>
         <Row>
@@ -35,7 +35,7 @@ function ExperienceFormComponent({ register, index, remove, item }) {
             id={`experience[${index}].responsibilities`}
             name={`experience[${index}].responsibilities`}
             defaultValue={responsibilities ? responsibilities : ''}
-            ref={register({ required: 'Responsibilities are required' })}
+            ref={register()}
           />
         </Row>
         <Row>
@@ -45,7 +45,7 @@ function ExperienceFormComponent({ register, index, remove, item }) {
             id={`experience[${index}].workStartDate`}
             name={`experience[${index}].workStartDate`}
             defaultValue={workStartDate ? workStartDate : ''}
-            ref={register({ required: 'Start date is required' })}
+            ref={register()}
           />
         </Row>
         <Row>
@@ -55,7 +55,7 @@ function ExperienceFormComponent({ register, index, remove, item }) {
             id={`experience[${index}].workEndDate`}
             name={`experience[${index}].workEndDate`}
             defaultValue={workEndDate ? workEndDate : ''}
-            ref={register({ required: 'End date is required' })}
+            ref={register()}
           />
         </Row>
         <TrashButton onClick={() => remove(index)} size={25} />
