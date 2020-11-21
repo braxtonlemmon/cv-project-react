@@ -28,8 +28,8 @@ const Main = styled.main`
 `;
 
 function App() {
-  const [isNew, setNew] = useState(true);
-  const [isEditing, setEditing] = useState(true);
+  const [isNew, setNew] = useState(false);
+  const [isEditing, setEditing] = useState(false);
   const [personalData, setPersonalData] = useState({
     firstName: '',
     lastName: '',

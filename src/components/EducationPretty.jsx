@@ -10,7 +10,7 @@ const Wrapper = styled.section`
   margin: 15px 0;
   padding-bottom: 15px;
   width: 100%;
-  border-bottom: 1px solid ${props => props.theme.colors.dark};
+  /* border-bottom: 1px solid ${props => props.theme.colors.dark}; */
 `;
 
 const Top = styled.div`

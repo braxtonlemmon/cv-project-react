@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   width: 100%;
   margin: 15px 0;
   padding-bottom: 15px;
-  border-bottom: 1px solid ${props => props.theme.colors.dark};
+  /* border-bottom: 1px solid ${props => props.theme.colors.dark}; */
   p {
     margin-bottom: 10px;
   }

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { wrapper, Button, H2 } from './Shared';
+import { wrapper, Button } from './Shared';
 import PersonalPretty from './PersonalPretty';
 import EducationPretty from './EducationPretty';
 import ExperiencePretty from './ExperiencePretty';
@@ -30,6 +30,12 @@ const Box = styled(wrapper)`
   width: 95%;
 `;
 
+const Section = styled(wrapper)`
+  border-bottom: ${props => props.noBorder ? 'none' : `1px solid ${props.theme.colors.dark}`};
+  width: 100%;
+  padding: 15px 0;
+`
+
 const Printable = styled(wrapper)`
   width: 90%;
   margin: 20px auto;
@@ -52,19 +58,31 @@ function Result({ handleEdit, personalData, educationData, experienceData, formD
   return (
     <Wrapper>
       <Box>
-        <PersonalPretty personalData={personalData} />
-        <h3>Education</h3>
-        {educationData.map(education => <EducationPretty education={education} />)}
-        <h3>Experience</h3>
-        {experienceData.map(experience => <ExperiencePretty experience={experience} />)}
+        <Section>
+          <PersonalPretty personalData={personalData} />
+        </Section>
+        <Section>
+          <h3>Education</h3>
+          {educationData.map((education, index) => <EducationPretty education={education} key={`educationPretty-${index}`} />)}
+        </Section>
+        <Section noBorder>
+          <h3>Experience</h3>
+          {experienceData.map((experience, index) => <ExperiencePretty experience={experience} key={`experiencePretty-${index}`} />)}
+        </Section>
       </Box>
       <div style={{ display: "none"}}>
         <Printable ref={componentRef}>
-          <PersonalPretty personalData={personalData} />
-          <h3>Education</h3>
-          {educationData.map(education => <EducationPretty education={education} />)}
-          <h3>Experience</h3>
-          {experienceData.map(experience => <ExperiencePretty experience={experience} />)}
+          <Section>
+            <PersonalPretty personalData={personalData} />
+          </Section>
+          <Section>
+            <h3>Education</h3>
+            {educationData.map((education, index) => <EducationPretty education={education} key={`educationPretty-${index}`} />)}
+          </Section>
+          <Section noBorder>
+            <h3>Experience</h3>
+            {experienceData.map((experience, index) => <ExperiencePretty experience={experience} key={`experiencePretty-${index}`} />)}
+          </Section>
         </Printable>
       </div>
       <Buttons>

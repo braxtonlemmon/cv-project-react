@@ -12,7 +12,7 @@ function Reset({ personalData, educationData, experienceData, reset }) {
         experience: experienceData
       });
     }, 500)
-  }, [reset])
+  }, [reset, personalData, educationData, experienceData])
 
   return (
     <div></div>
